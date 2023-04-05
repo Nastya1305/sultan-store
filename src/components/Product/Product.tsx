@@ -3,9 +3,9 @@ import { IProduct, SizeTypes } from "../../types/product";
 import "./Product.scss";
 import Button from '../UI/Button/Button';
 
-const boxImg: string = require("@img/Product/box.svg");
-const bottleImg: string = require("@img/Product/bottle.svg");
-const basketImg: string = require('@img/Product/basket.svg');
+const boxImg: string = require("../../assets/images/Product/box.svg");
+const bottleImg: string = require("../../assets/images/Product/bottle.svg");
+const basketImg: string = require('../../assets/images/Product/basket.svg');
 
 
 interface ProductItemProps {
