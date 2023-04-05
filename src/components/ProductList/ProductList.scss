@@ -1,0 +1,12 @@
+.products {
+   display: flex;
+   flex-wrap: wrap;
+   width: 1020px;
+   margin: 0 -10px;
+
+   &__item {
+      flex: 0 1 33.333%;
+      display: flex;
+      padding: 10px;
+   }
+}

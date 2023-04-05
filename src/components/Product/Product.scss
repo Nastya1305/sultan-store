@@ -1,0 +1,93 @@
+.product-card {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+
+   max-height: auto;
+   width: 100%;
+
+   padding: 30px 23px;
+
+   background: #ffffff;
+   box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
+   border-radius: 10px;
+
+   font-family: "Inter";
+   color: #111111;
+   line-height: 130%;
+
+   &__img {
+      height: 50%;
+
+      img {
+         height: 100%;
+         width: 100%;
+         object-fit: contain;
+      }
+   }
+
+   &__size {
+      margin-bottom: 10px;
+      display: flex;
+
+      *:not(:last-child) {
+         margin-right: 8px;
+      }
+   }
+
+   &__value {
+      font-weight: 400;
+      font-size: 12px;
+   }
+
+   &__title {
+      flex: 1 1 auto;
+      max-height: 3.5em;
+      overflow: hidden;
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-size: 16px;
+      color: inherit;
+
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+
+   &__properties {
+      margin-bottom: 10px;
+   }
+
+   &__buy {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-right: 26px;
+   }
+
+   &__price {
+      font-weight: 800;
+      font-size: 16px;
+   }
+
+   &__btn {
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+   }
+}
+
+.product-property {
+   font-size: 14px;
+   margin-bottom: 5px;
+
+   &__key {
+      font-weight: 300;
+   }
+
+   &__value {
+      font-weight: 500;
+   }
+}
