@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/sultan-store/static/css/main.d85f5d70.css",
+    "main.js": "/sultan-store/static/js/main.09e7d345.js",
+    "static/media/basket.svg": "/sultan-store/static/media/basket.4fb8fed8d9ac901d1538a5fcf4b1a875.svg",
+    "static/media/bottle.svg": "/sultan-store/static/media/bottle.26a2bf63290bd668562f319703809abc.svg",
+    "static/media/box.svg": "/sultan-store/static/media/box.3daf02ca5bcf43434fd3c21fedf830c9.svg",
+    "index.html": "/sultan-store/index.html",
+    "main.d85f5d70.css.map": "/sultan-store/static/css/main.d85f5d70.css.map",
+    "main.09e7d345.js.map": "/sultan-store/static/js/main.09e7d345.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d85f5d70.css",
+    "static/js/main.09e7d345.js"
+  ]
+}
