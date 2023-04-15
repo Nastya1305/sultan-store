@@ -1,14 +1,14 @@
-import React from 'react';
-import './Button.css';
+import React, { PropsWithChildren } from 'react';
+import './Button.scss';
 
-interface ButtonProps {
-   children: React.ReactChild | React.ReactNode;
-   className?: string
+interface ButtonProps extends PropsWithChildren {
+   className?: string,
+   onClick?: () => void
 }
 
-const Button: React.FC<ButtonProps> = ({ children, className }) => {
+const Button: React.FC<ButtonProps> = ({ children, className, onClick }) => {
    return (
-      <button className={"button " + (className ? className : "")}>
+      <button onClick={onClick} className={"button " + (className ? className : "")}>
          {children}
       </button>
    );

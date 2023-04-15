@@ -1,34 +1,37 @@
 import React, { useEffect } from 'react';
 import { useTypedSelector } from "../../hooks/useTypedSelector";
-import { getProducts } from "../../store/action-creators/product";
 import { useActions } from "../../hooks/useActions";
 import Product from '../Product/Product';
 import "./ProductList.scss";
-import { ProductTypes } from '../../types/product';
+
 
 const ProductList: React.FC = () => {
 
-   const { category } = useTypedSelector(state => state.filter)
-   const { filteredProducts } = useTypedSelector(state => state.product)
-   const { getProducts, filterProductsByCategory } = useActions()
+   const filter = useTypedSelector(state => state.filter)
+   const { products, filteredProducts } = useTypedSelector(state => state.product)
+   const { getProducts, filterProducts, getManufacturers } = useActions()
 
 
    useEffect(() => {
       getProducts()
-      filterProductsByCategory(category)
    }, [])
 
+   useEffect(() => {
+      getManufacturers(products)
+   }, [products])
 
    useEffect(() => {
-      filterProductsByCategory(category)
-   }, [category])
+      filterProducts(filter)
+   }, [filter, products])
 
 
    return (
       <div className='products'>
          {filteredProducts.map(product =>
-            <div className='products__item' key={product.barcode}>
-               <Product product={product} />
+            <div className='products__row' key={product.barcode}>
+               <div className='products__item' >
+                  <Product product={product} />
+               </div>
             </div>
          )}
       </div>

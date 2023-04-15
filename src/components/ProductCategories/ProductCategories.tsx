@@ -1,36 +1,33 @@
 import React, { FC } from 'react';
-import { ProductTypes } from '../../types/product';
+import { ProductCategory } from '../../types/product';
 import "./ProductCategories.scss";
 
 
 interface ProductCategoriesProps {
-   value: ProductTypes,
-   onClickCategory: (categoryName: ProductTypes) => void,
+   currentCategory: ProductCategory,
+   onClickCategory: (categoryName: ProductCategory) => void,
 }
 
+const categories: Array<ProductCategory> = [
+   ProductCategory.All,
+   ProductCategory.BodyCare,
+   ProductCategory.HandCare,
+   ProductCategory.FeetCare,
+   ProductCategory.FaceCare,
+   ProductCategory.HairCare,
+   ProductCategory.TanningProducts,
+   ProductCategory.ShavingProducts,
+   ProductCategory.GiftSets,
+   ProductCategory.HygieneProducts,
+   ProductCategory.OralHygiene,
+   ProductCategory.PaperProducts,
+];
 
-const ProductCategories: FC<ProductCategoriesProps> = ({ value, onClickCategory }) => {
+const ProductCategories: FC<ProductCategoriesProps> = ({ currentCategory, onClickCategory }) => {
 
-
-   const categories: Array<ProductTypes> = [
-      ProductTypes.All,
-      ProductTypes.BodyCare,
-      ProductTypes.HandCare,
-      ProductTypes.FeetCare,
-      ProductTypes.FaceCare,
-      ProductTypes.HairCare,
-      ProductTypes.TanningProducts,
-      ProductTypes.ShavingProducts,
-      ProductTypes.GiftSets,
-      ProductTypes.HygieneProducts,
-      ProductTypes.OralHygiene,
-      ProductTypes.PaperProducts,
-   ];
-
-
-   function getItemClassName(categoryName: ProductTypes): string {
+   function getItemClassName(category: ProductCategory): string {
       let className: string = "categories__item";
-      if (categoryName === value)
+      if (category === currentCategory)
          className += " active";
       return className;
    }
@@ -39,10 +36,10 @@ const ProductCategories: FC<ProductCategoriesProps> = ({ value, onClickCategory 
       <div className='categories'>
          <ul className='categories__list'>
             {
-               categories.map((categoryName, index) =>
+               categories.map((category, index) =>
                   <li key={index}>
-                     <button onClick={() => onClickCategory(categoryName)} className={getItemClassName(categoryName)}>
-                        {categoryName}
+                     <button onClick={() => onClickCategory(category)} className={getItemClassName(category)}>
+                        {category}
                      </button>
                   </li>)
             }

@@ -1,9 +1,11 @@
-export const enum SizeTypes {
+import { FilterState } from "./filter";
+
+export const enum SizeType {
    Volume = "volume",
    Weight = "weight",
 }
 
-export const enum ProductTypes {
+export const enum ProductCategory {
    All = "Все",
    BodyCare = "Уход за телом",
    HandCare = "Уход за руками",
@@ -21,14 +23,14 @@ export const enum ProductTypes {
 export interface IProduct {
    img: string;
    name: string;
-   sizeType: SizeTypes;
+   sizeType: SizeType;
    size: number;
    barcode: number;
    manufacturer: string;
    brand: string;
    description: string;
    price: number;
-   types: ProductTypes[];
+   categories: ProductCategory[];
 }
 
 
@@ -39,7 +41,7 @@ export interface ProductState {
 
 export enum ProductActionTypes {
    GET_PRODUCTS = 'GET_PRODUCTS',
-   FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY'
+   FILTER_PRODUCTS = 'FILTER_PRODUCTS'
 }
 
 
@@ -48,16 +50,11 @@ interface GetProductAction {
    payload: IProduct[];
 }
 
-interface FilterByCategoryAction {
-   type: ProductActionTypes.FILTER_BY_CATEGORY;
-   payload: ProductTypes;
+interface FilterProductsAction {
+   type: ProductActionTypes.FILTER_PRODUCTS;
+   payload: FilterState;
 }
 
-export type ProductAction = GetProductAction | FilterByCategoryAction
 
+export type ProductAction = GetProductAction | FilterProductsAction
 
-
-
-
-
-export type QueryAction = FilterByCategoryAction

@@ -1,28 +1,42 @@
-import { ProductTypes } from "./product";
+import { ProductCategory } from "./product";
 
-export interface Price {
-   min?: number,
-   max?: number,
+export interface PriceLimit {
+   min: number,
+   max: number,
 }
 
+
 export interface FilterState {
-   category: ProductTypes,
-   price: Price,
+   category: ProductCategory,
+   priceLimit: PriceLimit,
+   manufacturers: string[]
 }
 
 export enum FilterActionTypes {
    SET_CATEGORY = 'SET_CATEGORY',
-   SET_PRICE = 'SET_PRICE',
+   SET_MIN_PRICE = 'SET_MIN_PRICE',
+   SET_MAX_PRICE = 'SET_MAX_PRICE',
+   SET_MANUFACTURERS = 'SET_MANUFACTURERS'
 }
 
 interface SetCategoryAction {
    type: FilterActionTypes.SET_CATEGORY,
-   payload: ProductTypes
+   payload: ProductCategory
 }
 
-interface SetPriceAction {
-   type: FilterActionTypes.SET_PRICE,
-   payload: Price
+interface SetMinPriceAction {
+   type: FilterActionTypes.SET_MIN_PRICE,
+   payload: number
 }
 
-export type FilterAction = SetCategoryAction | SetPriceAction
+interface SetMaxPriceAction {
+   type: FilterActionTypes.SET_MAX_PRICE,
+   payload: number
+}
+
+interface SetManufacturersAction {
+   type: FilterActionTypes.SET_MANUFACTURERS,
+   payload: string[]
+}
+
+export type FilterAction = SetCategoryAction | SetMinPriceAction | SetMaxPriceAction | SetManufacturersAction

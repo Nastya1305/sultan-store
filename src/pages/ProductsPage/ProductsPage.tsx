@@ -4,20 +4,37 @@ import ProductCategories from '../../components/ProductCategories/ProductCategor
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useActions } from "../../hooks/useActions";
 import "./ProductsPage.scss";
-import ProductPrice from '../../components/ProductPrice/ProductPrice';
+import PriceWidget from '../../components/PriceWidget/PriceWidget';
+import FilterWidget from '../../components/FilterWidget/FilterWidget';
 
 const ProductsPage: FC = () => {
-   const { category } = useTypedSelector(state => state.filter);
-   const { setProductCategory } = useActions();
+   const { category, priceLimit } = useTypedSelector(state => state.filter);
+   const { manufacturers, filteredManufacturers } = useTypedSelector(state => state.manufacturer);
+   const { setProductCategory, setMinProductPrice, setMaxProductPrice, setManufacturers } = useActions();
 
    return (
       <div>
-         <ProductCategories value={category} onClickCategory={(name) => setProductCategory(name)} />
+         <ProductCategories
+            currentCategory={category}
+            onClickCategory={(categoryItem) =>
+               setProductCategory(categoryItem)}
+         />
+
          <div className='page-columns'>
             <div className='filters'>
                <div className='filters__title'>Подбор по параметрам</div>
-               <ProductPrice />
+               <PriceWidget
+                  startLimit={priceLimit}
+                  onChangeMinLimit={(minPrice) => setMinProductPrice(minPrice)}
+                  onChangeMaxLimit={(maxPrice) => setMaxProductPrice(maxPrice)}
+               />
+               <FilterWidget
+                  filterTitle='Производитель'
+                  values={filteredManufacturers}
+                  onChangeFilterList={(values) => setManufacturers(values)}
+               />
             </div>
+
             <ProductList />
          </div>
 
@@ -26,3 +43,4 @@ const ProductsPage: FC = () => {
 };
 
 export default ProductsPage;
+

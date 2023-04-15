@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
-import { IProduct, SizeTypes } from "../../types/product";
+import { IProduct, SizeType } from "../../types/product";
 import "./Product.scss";
 import Button from '../UI/Button/Button';
 
-const boxImg: string = require("../../assets/images/Product/box.svg");
-const bottleImg: string = require("../../assets/images/Product/bottle.svg");
-const basketImg: string = require('../../assets/images/Product/basket.svg');
+const boxImg: string = require("../../assets/images/Product/box.svg").default;
+const bottleImg: string = require("../../assets/images/Product/bottle.svg").default;
+const basketImg: string = require('../../assets/images/Product/basket.svg').default;
 
 
 interface ProductItemProps {
@@ -17,11 +17,11 @@ const Product: FC<ProductItemProps> = ({ product }) => {
    let imgURL: string = "";
    let units: string = "";
    switch (product.sizeType) {
-      case SizeTypes.Volume:
+      case SizeType.Volume:
          imgURL = bottleImg;
          units = "мл";
          break;
-      case SizeTypes.Weight:
+      case SizeType.Weight:
          imgURL = boxImg;
          units = "г"
          break;
@@ -31,7 +31,7 @@ const Product: FC<ProductItemProps> = ({ product }) => {
    return (
       <div className='product-card'>
          <div className='product-card__img'>
-            <img src={product.img} alt={product.name} />
+            <img src={require("../../assets/" + product.img)} alt={product.name} />
          </div>
          <div className='product-card__size product-size'>
             <div className='product-size__img'><img src={imgURL} alt="Тип размера" /></div>
@@ -57,7 +57,7 @@ const Product: FC<ProductItemProps> = ({ product }) => {
          </div>
          <div className='product-card__buy'>
             <div className='product-card__price'>{product.price} ₽</div>
-            <Button className='product-card__btn'>
+            <Button className='product-card__btn' onClick={() => { }}>
                <span>В корзину</span>
                <img src={basketImg}></img>
             </Button>

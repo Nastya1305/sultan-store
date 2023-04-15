@@ -6,12 +6,14 @@
    padding: 1em 2.5em;
    display: flex;
    align-items: center;
-}
 
-.button:hover {
-   background-color: #f3a50d;
-}
+   cursor: pointer;
 
-.button > *:not(:last-child) {
-   margin-right: 5px;
+   &:hover {
+      background-color: #f3a50d;
+   }
+
+   *:not(:last-child) {
+      margin-right: 5px;
+   }
 }
