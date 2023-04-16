@@ -5,6 +5,7 @@ export interface PriceLimit {
    max: number,
 }
 
+export type ManufacturersType = Map<string, number>;
 
 export interface FilterState {
    category: ProductCategory,

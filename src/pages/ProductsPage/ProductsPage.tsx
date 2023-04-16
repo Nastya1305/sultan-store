@@ -1,41 +1,36 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import ProductList from '../../components/ProductList/ProductList';
-import ProductCategories from '../../components/ProductCategories/ProductCategories';
+import ProductCategories, { ProductCategoriesVariant } from '../../components/ProductCategories/ProductCategories';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useActions } from "../../hooks/useActions";
 import "./ProductsPage.scss";
-import PriceWidget from '../../components/PriceWidget/PriceWidget';
-import FilterWidget from '../../components/FilterWidget/FilterWidget';
+import { filterProducts } from '../../utils/filter';
+import { IProduct } from '../../types/product';
+import FiltersContainer from '../../components/FiltersContainer/FiltersContainer';
 
 const ProductsPage: FC = () => {
-   const { category, priceLimit } = useTypedSelector(state => state.filter);
-   const { manufacturers, filteredManufacturers } = useTypedSelector(state => state.manufacturer);
-   const { setProductCategory, setMinProductPrice, setMaxProductPrice, setManufacturers } = useActions();
+   const filter = useTypedSelector(state => state.filter)
+   const { products } = useTypedSelector(state => state.product)
+   const { setProductCategory, getProducts } = useActions();
+
+   let filteredProducts: IProduct[] = filterProducts(products, filter);
+
+   useEffect(() => {
+      getProducts()
+   }, [])
 
    return (
       <div>
          <ProductCategories
-            currentCategory={category}
+            variant={ProductCategoriesVariant.horizontalButtonList}
+            currentCategory={filter.category}
             onClickCategory={(categoryItem) =>
                setProductCategory(categoryItem)}
          />
 
          <div className='page-columns'>
-            <div className='filters'>
-               <div className='filters__title'>Подбор по параметрам</div>
-               <PriceWidget
-                  startLimit={priceLimit}
-                  onChangeMinLimit={(minPrice) => setMinProductPrice(minPrice)}
-                  onChangeMaxLimit={(maxPrice) => setMaxProductPrice(maxPrice)}
-               />
-               <FilterWidget
-                  filterTitle='Производитель'
-                  values={filteredManufacturers}
-                  onChangeFilterList={(values) => setManufacturers(values)}
-               />
-            </div>
-
-            <ProductList />
+            <FiltersContainer />
+            <ProductList values={filteredProducts} />
          </div>
 
       </div>

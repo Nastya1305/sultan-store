@@ -1,7 +1,7 @@
 import { FilterState } from "../../types/filter";
 import { ProductAction, ProductActionTypes } from "../../types/product";
 import { Dispatch } from "redux";
-import goods from 'assets/local-data/goods.json';
+import goods from '../../assets/local-data/goods.json';
 
 export const getProducts = () => {
    return { type: ProductActionTypes.GET_PRODUCTS, payload: goods }
@@ -21,6 +21,3 @@ export const getProducts = () => {
    // }
 }
 
-export function filterProducts(filter: FilterState): ProductAction {
-   return { type: ProductActionTypes.FILTER_PRODUCTS, payload: filter }
-}

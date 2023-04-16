@@ -1,7 +1,7 @@
 import { IProduct } from "../types/product";
-import { ManufacturersType } from "../types/manufacturer";
+import { ManufacturersType } from "../types/filter";
 
-export function manufacturersFromProducts(products: IProduct[]): ManufacturersType {
+export function getManufacturersFromProducts(products: IProduct[]): ManufacturersType {
    return products.reduce((manufacturers, product) => {
       let numOfProducts = 0;
       if (manufacturers.has(product.manufacturer)) {
@@ -14,5 +14,5 @@ export function manufacturersFromProducts(products: IProduct[]): ManufacturersTy
 
 export function searchManufacturersByName(manufacturers: ManufacturersType, query: string): ManufacturersType {
    return new Map(Array.from(manufacturers).filter(([manufacturerName]) =>
-      manufacturerName.toLowerCase().includes(query)));
+      manufacturerName.toLowerCase().includes(query.toLowerCase())));
 }

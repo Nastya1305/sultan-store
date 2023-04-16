@@ -1,33 +1,22 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTypedSelector } from "../../hooks/useTypedSelector";
-import { useActions } from "../../hooks/useActions";
+
 import Product from '../Product/Product';
 import "./ProductList.scss";
+import { IProduct } from '../../types/product';
 
 
-const ProductList: React.FC = () => {
-
-   const filter = useTypedSelector(state => state.filter)
-   const { products, filteredProducts } = useTypedSelector(state => state.product)
-   const { getProducts, filterProducts, getManufacturers } = useActions()
+interface ProductListProps {
+   values: IProduct[],
+}
 
 
-   useEffect(() => {
-      getProducts()
-   }, [])
-
-   useEffect(() => {
-      getManufacturers(products)
-   }, [products])
-
-   useEffect(() => {
-      filterProducts(filter)
-   }, [filter, products])
-
+const ProductList: React.FC<ProductListProps> = ({ values }) => {
+   const { filteredProducts } = useTypedSelector(state => state.product)
 
    return (
       <div className='products'>
-         {filteredProducts.map(product =>
+         {values.map(product =>
             <div className='products__row' key={product.barcode}>
                <div className='products__item' >
                   <Product product={product} />

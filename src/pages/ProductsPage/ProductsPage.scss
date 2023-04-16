@@ -2,18 +2,3 @@
    display: flex;
    justify-content: space-between;
 }
-
-.filters {
-   width: 240px;
-   margin-top: 20px;
-
-   &__title {
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 150%;
-      text-transform: uppercase;
-      color: #111111;
-
-      margin-bottom: 10px;
-   }
-}

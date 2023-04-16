@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
 import { ProductCategory } from "../../types/product";
 import { FilterAction, FilterActionTypes } from "../../types/filter";
-import { ManufacturersType } from "../../types/manufacturer";
+
 
 export function setProductCategory(categoryName: ProductCategory): FilterAction {
    return { type: FilterActionTypes.SET_CATEGORY, payload: categoryName }
