@@ -1,6 +1,20 @@
+@import "../../styles/vars";
+
 .horizontal-button-list {
-   margin-bottom: 20px;
+   padding: 10px 0;
+   margin-bottom: 10px;
+   overflow-x: scroll;
+   scrollbar-width: 0;
+
+   &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+   }
+
    &__list {
+      width: $contentWidth + px;
+      height: 100%;
+
       display: flex;
 
       *:not(:last-child) {
@@ -13,9 +27,9 @@
    }
 
    &__item {
-      display: block;
+      display: flex;
+      align-items: center;
       padding: 18px 15px;
-      max-height: 70px;
 
       cursor: pointer;
       box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);

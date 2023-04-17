@@ -1,12 +1,12 @@
 .product-card {
    display: flex;
    flex-direction: column;
-   justify-content: start;
 
-   max-height: auto;
+   height: auto;
+   max-height: 510px;
    width: 100%;
 
-   padding: 30px 23px;
+   padding: 9% 7%;
 
    background: #ffffff;
    box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
@@ -15,6 +15,10 @@
    font-family: "Inter";
    color: #111111;
    line-height: 130%;
+
+   @media (max-width: 630px) {
+      padding: 2% 5%;
+   }
 
    &__img {
       height: 50%;
@@ -27,7 +31,7 @@
    }
 
    &__size {
-      margin-bottom: 10px;
+      margin-bottom: 3%;
       display: flex;
 
       *:not(:last-child) {
@@ -38,13 +42,17 @@
    &__value {
       font-weight: 400;
       font-size: 12px;
+
+      @media (max-width: 710px) {
+         font-size: 8px;
+      }
    }
 
    &__title {
-      flex: 1 1 auto;
-      max-height: 3.5em;
+      margin-bottom: 7%;
+      height: 4rem;
       overflow: hidden;
-      margin-bottom: 20px;
+
       font-weight: 500;
       font-size: 16px;
       color: inherit;
@@ -52,22 +60,35 @@
       &:hover {
          text-decoration: underline;
       }
+
+      @media (max-width: 630px) {
+         height: auto;
+         max-height: 4rem;
+      }
+
+      @media (max-width: 710px) {
+         font-size: 14px;
+      }
    }
 
    &__properties {
-      margin-bottom: 10px;
+      margin-bottom: 5%;
    }
 
    &__buy {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-right: 26px;
+      margin-right: 8%;
    }
 
    &__price {
       font-weight: 800;
       font-size: 16px;
+
+      @media (max-width: 710px) {
+         font-size: 14px;
+      }
    }
 
    &__btn {
@@ -81,7 +102,11 @@
 
 .product-property {
    font-size: 14px;
-   margin-bottom: 5px;
+   margin-bottom: 1.6%;
+
+   @media (max-width: 710px) {
+      font-size: 12px;
+   }
 
    &__key {
       font-weight: 300;

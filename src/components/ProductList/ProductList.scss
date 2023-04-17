@@ -1,16 +1,37 @@
+@import "../../styles/vars";
+
 .products {
    display: flex;
    flex-wrap: wrap;
-   width: 1020px;
+   width: 75%;
+   height: auto;
    margin: 0 -10px;
 
-   &__row {
-      display: flex;
-      flex: 0 0 33.333%;
+   @media (max-width: $media2 + px) {
+      width: 100%;
+      height: auto;
    }
 
-   &__item {
-      // display: flex;
+   @media (max-width: 630px) {
+      justify-content: center;
+   }
+
+   &__column {
+      display: flex;
+      flex: 0 1 33.333%;
       padding: 10px;
+
+      @media (max-width: $media3 + px) {
+         flex: 0 1 50%;
+      }
+
+      @media (max-width: 630px) {
+         flex: 0 1 80vw;
+         max-width: 326px;
+      }
+
+      @media (max-width: $media5 + px) {
+         flex: 0 1 100%;
+      }
    }
 }

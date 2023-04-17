@@ -1,4 +1,11 @@
+@import "../../styles/vars";
+
 .page-columns {
    display: flex;
+   align-items: flex-start;
    justify-content: space-between;
+
+   @media (max-width: $media2 + px) {
+      flex-direction: column;
+   }
 }

@@ -1,6 +1,13 @@
+@import "../../styles/vars";
+
 .filters {
    width: 240px;
    margin-top: 20px;
+   margin-right: 30px;
+
+   @media (max-width: $media2 + px) {
+      width: 100%;
+   }
 
    &__title {
       font-weight: 500;

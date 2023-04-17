@@ -12,15 +12,12 @@ interface ProductListProps {
 
 
 const ProductList: React.FC<ProductListProps> = ({ values }) => {
-   const { filteredProducts } = useTypedSelector(state => state.product)
 
    return (
       <div className='products'>
          {values.map(product =>
-            <div className='products__row' key={product.barcode}>
-               <div className='products__item' >
-                  <Product product={product} />
-               </div>
+            <div className='products__column' key={product.barcode}>
+               <Product product={product} />
             </div>
          )}
       </div>

@@ -7,6 +7,7 @@ import PriceWidget from '../../components/PriceWidget/PriceWidget';
 import FilterWidget from '../../components/FilterWidget/FilterWidget';
 import { getManufacturersFromProducts } from '../../utils/manufacturers';
 import { ManufacturersType } from '../../types/filter';
+import { filterProducts } from '../../utils/filter';
 
 
 const FiltersContainer: FC = () => {
@@ -14,7 +15,8 @@ const FiltersContainer: FC = () => {
    const { products } = useTypedSelector(state => state.product)
    const { setProductCategory, setMinProductPrice, setMaxProductPrice, setManufacturers } = useActions();
 
-   let manufacturers: ManufacturersType = getManufacturersFromProducts(products);
+   let manufacturers: ManufacturersType = getManufacturersFromProducts(filterProducts(products,
+      { category: filter.category, priceLimit: filter.priceLimit, manufacturers: [] }));
 
    return (
 
