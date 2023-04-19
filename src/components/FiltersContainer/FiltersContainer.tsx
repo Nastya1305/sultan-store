@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useMemo, useState } from 'react';
 import ProductCategories, { ProductCategoriesVariant } from '../../components/ProductCategories/ProductCategories';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useActions } from "../../hooks/useActions";
@@ -21,8 +21,10 @@ const FiltersContainer: FC = () => {
    const screen = useResize();
    const [isFilterListOpen, setIsFilterListOpen] = useState<boolean>(false);
 
-   let manufacturers: ManufacturersType = getManufacturersFromProducts(filterProducts(products,
-      { category: filter.category, priceLimit: filter.priceLimit, manufacturers: [] }));
+   const manufacturers: ManufacturersType = useMemo(() =>
+      getManufacturersFromProducts(filterProducts(products,
+         { category: filter.category, priceLimit: filter.priceLimit, manufacturers: [] })),
+      [products, filter.category, filter.priceLimit])
 
    return (
       <div className='filters-container'>

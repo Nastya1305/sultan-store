@@ -35,8 +35,7 @@ export interface IProduct {
 
 
 export interface ProductState {
-   products: IProduct[],
-   filteredProducts: IProduct[]
+   products: IProduct[]
 }
 
 export enum ProductActionTypes {

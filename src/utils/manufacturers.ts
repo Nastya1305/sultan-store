@@ -2,7 +2,6 @@ import { IProduct } from "../types/product";
 import { ManufacturersType } from "../types/filter";
 
 export function getManufacturersFromProducts(products: IProduct[]): ManufacturersType {
-
    return products.reduce((manufacturers, product) => {
       let numOfProducts = 0;
       if (manufacturers.has(product.manufacturer)) {

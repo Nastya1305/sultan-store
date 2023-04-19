@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 import "./FilterWidget.scss";
 import Search from '../UI/Search/Search';
 import { ManufacturersType } from '../../types/filter';
@@ -15,7 +15,9 @@ interface FilterWidgetProps {
 const FilterWidget: FC<FilterWidgetProps> = ({ filterTitle, values, onChangeFilterList }) => {
 
    const [searchValue, setSearchValue] = useState<string>("");
-   let filteredManufacturers: ManufacturersType = searchManufacturersByName(values, searchValue);
+   const filteredManufacturers: ManufacturersType = useMemo(() =>
+      searchManufacturersByName(values, searchValue),
+      [values, searchValue])
 
    return (
       <div className='filter'>

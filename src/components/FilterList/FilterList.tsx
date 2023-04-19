@@ -1,5 +1,6 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState, useMemo } from 'react';
 import "./FilterList.scss";
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 
 interface FilterListProps {
@@ -8,16 +9,21 @@ interface FilterListProps {
 }
 
 const FilterList: FC<FilterListProps> = ({ values, onChangeFilterList }) => {
+
    const [selectedValues, setSelectedValues] = useState<string[]>([]);
    const [isFullList, setIsFullList] = useState<boolean>(false);
+   const filterCategory = useTypedSelector(state => state.filter.category)
 
    useEffect(() => { onChangeFilterList(selectedValues); },
       [selectedValues])
 
+   useEffect(() => { setSelectedValues([]) },
+      [filterCategory])
 
-   let valuesList = Array.from(values).sort(([value1], [value2]) => {
-      return Number(selectedValues.includes(value2)) - Number(selectedValues.includes(value1));
-   })
+   const valuesList = useMemo(() =>
+      Array.from(values).sort(([value1], [value2]) => {
+         return Number(selectedValues.includes(value2)) - Number(selectedValues.includes(value1));
+      }), [values, selectedValues])
 
 
    function handleCheckBoxChange(e: React.ChangeEvent<HTMLInputElement>) {

@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useMemo } from 'react';
 import ProductList from '../../components/ProductList/ProductList';
 import ProductCategories, { ProductCategoriesVariant } from '../../components/ProductCategories/ProductCategories';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
@@ -15,7 +15,7 @@ const ProductsPage: FC = () => {
    const { setProductCategory, getProducts } = useActions();
    const screen = useResize();
 
-   let filteredProducts: IProduct[] = filterProducts(products, filter);
+   const filteredProducts: IProduct[] = useMemo(() => filterProducts(products, filter), [products, filter])
 
    useEffect(() => {
       getProducts()
