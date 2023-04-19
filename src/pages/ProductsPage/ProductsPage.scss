@@ -8,4 +8,8 @@
    @media (max-width: $media2 + px) {
       flex-direction: column;
    }
+
+   @media (max-width: $media6 + px) {
+      align-items: center;
+   }
 }

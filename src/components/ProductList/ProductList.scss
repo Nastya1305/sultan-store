@@ -12,7 +12,7 @@
       height: auto;
    }
 
-   @media (max-width: 630px) {
+   @media (max-width: $media6 + px) {
       justify-content: center;
    }
 
@@ -25,12 +25,12 @@
          flex: 0 1 50%;
       }
 
-      @media (max-width: 630px) {
+      @media (max-width: $media6 + px) {
          flex: 0 1 80vw;
          max-width: 326px;
       }
 
-      @media (max-width: $media5 + px) {
+      @media (max-width: $media7 + px) {
          flex: 0 1 100%;
       }
    }

@@ -1,3 +1,5 @@
+@import "../../styles/vars";
+
 .product-card {
    display: flex;
    flex-direction: column;
@@ -16,7 +18,7 @@
    color: #111111;
    line-height: 130%;
 
-   @media (max-width: 630px) {
+   @media (max-width: $media7 + px) {
       padding: 2% 5%;
    }
 
@@ -43,7 +45,7 @@
       font-weight: 400;
       font-size: 12px;
 
-      @media (max-width: 710px) {
+      @media (max-width: $media7 + px) {
          font-size: 8px;
       }
    }
@@ -61,12 +63,12 @@
          text-decoration: underline;
       }
 
-      @media (max-width: 630px) {
+      @media (max-width: $media6 + px) {
          height: auto;
          max-height: 4rem;
       }
 
-      @media (max-width: 710px) {
+      @media (max-width: $media7 + px) {
          font-size: 14px;
       }
    }
@@ -86,7 +88,7 @@
       font-weight: 800;
       font-size: 16px;
 
-      @media (max-width: 710px) {
+      @media (max-width: $media7 + px) {
          font-size: 14px;
       }
    }
@@ -104,7 +106,7 @@
    font-size: 14px;
    margin-bottom: 1.6%;
 
-   @media (max-width: 710px) {
+   @media (max-width: $media5 + px) {
       font-size: 12px;
    }
 
