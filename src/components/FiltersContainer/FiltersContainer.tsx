@@ -35,7 +35,7 @@ const FiltersContainer: FC = () => {
                   screen.isMedia2 &&
                   <button
                      className={'filters-header__btn ' + (isFilterListOpen ? "up" : "down")}
-                     onClick={() => setIsFilterListOpen(!isFilterListOpen)}
+                     onClick={() => setIsFilterListOpen((prevState) => !prevState)}
                   >
                      <img src={arrowImg} alt="стрелка" />
                   </button>

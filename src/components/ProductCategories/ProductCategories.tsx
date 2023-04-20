@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import { ProductCategory } from '../../types/product';
 import "./ProductCategories.scss";
 

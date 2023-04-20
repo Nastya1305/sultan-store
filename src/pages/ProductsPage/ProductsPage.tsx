@@ -15,7 +15,8 @@ const ProductsPage: FC = () => {
    const { setProductCategory, getProducts } = useActions();
    const screen = useResize();
 
-   const filteredProducts: IProduct[] = useMemo(() => filterProducts(products, filter), [products, filter])
+   const filteredProducts: IProduct[] = useMemo(() =>
+      filterProducts(products, filter), [products, filter])
 
    useEffect(() => {
       getProducts()
@@ -32,7 +33,6 @@ const ProductsPage: FC = () => {
                   setProductCategory(categoryItem)}
             />
          }
-
 
          <div className='page-columns'>
             <FiltersContainer />

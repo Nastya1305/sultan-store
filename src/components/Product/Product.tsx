@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import { IProduct, SizeType } from "../../types/product";
 import "./Product.scss";
 import Button from '../UI/Button/Button';
@@ -12,20 +12,28 @@ interface ProductItemProps {
    product: IProduct;
 }
 
+interface ProductSize {
+   imgURL: string,
+   units: string
+}
+
 const Product: FC<ProductItemProps> = ({ product }) => {
 
-   let imgURL: string = "";
-   let units: string = "";
-   switch (product.sizeType) {
-      case SizeType.Volume:
-         imgURL = bottleImg;
-         units = "мл";
-         break;
-      case SizeType.Weight:
-         imgURL = boxImg;
-         units = "г"
-         break;
-   }
+   const productSize = useRef<ProductSize>({ imgURL: "", units: "" });
+
+   useEffect(() => {
+      switch (product.sizeType) {
+         case SizeType.Volume:
+            productSize.current.imgURL = bottleImg;
+            productSize.current.units = "мл";
+            break;
+         case SizeType.Weight:
+            productSize.current.imgURL = boxImg;
+            productSize.current.units = "г"
+            break;
+      }
+   }, [])
+
 
 
    return (
@@ -34,8 +42,8 @@ const Product: FC<ProductItemProps> = ({ product }) => {
             <img src={require("../../assets/" + product.img)} alt={product.name} />
          </div>
          <div className='product-card__size product-size'>
-            <div className='product-size__img'><img src={imgURL} alt="Тип размера" /></div>
-            <div className='product-size__value'>{product.size + " " + units}</div>
+            <div className='product-size__img'><img src={productSize.current.imgURL} alt="Тип размера" /></div>
+            <div className='product-size__value'>{product.size + " " + productSize.current.units}</div>
          </div>
          <a href="#" className='product-card__title'>
             <b>{product.brand} </b>

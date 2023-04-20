@@ -1,4 +1,4 @@
-import { FilterState } from "./filter";
+
 
 export const enum SizeType {
    Volume = "volume",
@@ -40,7 +40,6 @@ export interface ProductState {
 
 export enum ProductActionTypes {
    GET_PRODUCTS = 'GET_PRODUCTS',
-   FILTER_PRODUCTS = 'FILTER_PRODUCTS'
 }
 
 
@@ -49,11 +48,7 @@ interface GetProductAction {
    payload: IProduct[];
 }
 
-interface FilterProductsAction {
-   type: ProductActionTypes.FILTER_PRODUCTS;
-   payload: FilterState;
-}
 
 
-export type ProductAction = GetProductAction | FilterProductsAction
+export type ProductAction = GetProductAction
 
