@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState, useMemo } from 'react';
-import "./FilterList.scss";
-import { useTypedSelector } from '../../hooks/useTypedSelector';
+import "./FilterWidgetList.scss";
+import { useTypedSelector } from 'hooks/useTypedSelector';
 
 
 interface FilterListProps {

@@ -1,13 +1,13 @@
-import React, { FC, useCallback } from 'react';
-import { ProductCategory } from '../../types/product';
-import "./ProductCategories.scss";
+import { FC } from 'react';
+import { ProductCategory } from 'types/product';
+import "./CategoriesWidget.scss";
 
 export enum ProductCategoriesVariant {
    horizontalButtonList = "horizontal-button-list",
    verticalLinkList = "vertical-link-list"
 }
 
-interface ProductCategoriesProps {
+interface CategoriesWidgetProps {
    currentCategory: ProductCategory,
    onClickCategory: (categoryName: ProductCategory) => void,
    variant: ProductCategoriesVariant
@@ -28,7 +28,7 @@ const categories: Array<ProductCategory> = [
    ProductCategory.PaperProducts,
 ];
 
-const ProductCategories: FC<ProductCategoriesProps> = ({ currentCategory, onClickCategory, variant }) => {
+const CategoriesWidget: FC<CategoriesWidgetProps> = ({ currentCategory, onClickCategory, variant }) => {
 
    function getItemClassName(category: ProductCategory): string {
       let className: string = variant + '__item';
@@ -58,4 +58,4 @@ const ProductCategories: FC<ProductCategoriesProps> = ({ currentCategory, onClic
    );
 }
 
-export default ProductCategories;
+export default CategoriesWidget;

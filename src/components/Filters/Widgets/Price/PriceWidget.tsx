@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import "./PriceWidget.scss";
-import { PriceLimit } from '../../types/filter';
+import { PriceLimit } from 'types/filter';
 
 
 interface PriceWidgetProps {

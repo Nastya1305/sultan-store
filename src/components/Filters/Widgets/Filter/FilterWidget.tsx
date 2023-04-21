@@ -1,9 +1,9 @@
-import React, { FC, useMemo, useState } from 'react';
+import { FC, useMemo, useState } from 'react';
 import "./FilterWidget.scss";
-import Search from '../UI/Search/Search';
-import { ManufacturersType } from '../../types/filter';
-import { searchManufacturersByName } from '../../utils/manufacturers';
-import FilterList from '../FilterList/FilterList';
+import Search from 'components/UI/Search/Search';
+import { ManufacturersType } from 'types/filter';
+import { searchManufacturersByName } from 'utils/manufacturers';
+import FilterList from './List/FilterWidgetList';
 
 
 interface FilterWidgetProps {

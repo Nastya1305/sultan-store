@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
 import './Search.scss';
-import Button from '../Button/Button';
+import Button from 'components/UI/Button/Button';
 
-const searchImg: string = require("../../../assets/images/Search/search.svg").default
+const searchImg: string = require("assets/images/Search/search.svg").default
 
 interface SearchProps {
    className?: string,
    onSearch: (searchValue: string) => void,
 }
 
-const Search: React.FC<SearchProps> = ({ className, onSearch }) => {
+const Search: FC<SearchProps> = ({ className, onSearch }) => {
    const [inputValue, setInputValue] = useState<string>("");
    return (
       <form className={"search " + (className ? className : "")}

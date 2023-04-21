@@ -1,16 +1,19 @@
-import React, { FC, useEffect, useMemo, useState } from 'react';
-import ProductCategories, { ProductCategoriesVariant } from '../../components/ProductCategories/ProductCategories';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { useActions } from "../../hooks/useActions";
+import { FC, useMemo, useState } from 'react';
 import "./FiltersContainer.scss";
-import PriceWidget from '../../components/PriceWidget/PriceWidget';
-import FilterWidget from '../../components/FilterWidget/FilterWidget';
-import { getManufacturersFromProducts } from '../../utils/manufacturers';
-import { ManufacturersType } from '../../types/filter';
-import { filterProducts } from '../../utils/filter';
-import { useResize } from '../../hooks/useResize';
 
-const arrowImg: string = require("../../assets/images/FilterContainer/arrow-down.svg").default;
+import ProductCategories, { ProductCategoriesVariant } from 'components/Filters/Widgets/Categories/CategoriesWidget';
+import PriceWidget from 'components/Filters/Widgets/Price/PriceWidget';
+import FilterWidget from 'components/Filters/Widgets/Filter/FilterWidget';
+
+import { useTypedSelector } from 'hooks/useTypedSelector';
+import { useActions } from "hooks/useActions";
+import { useResize } from 'hooks/useResize';
+
+import { getManufacturersFromProducts } from 'utils/manufacturers';
+import { filterProducts } from 'utils/filter';
+import { ManufacturersType } from 'types/filter';
+
+const arrowImg: string = require("assets/images/FilterContainer/arrow-down.svg").default;
 
 
 const FiltersContainer: FC = () => {

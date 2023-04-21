@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductsPage from './pages/ProductsPage/ProductsPage';
+import ProductsPage from './pages/Catalog/CatalogPage';
 
 const App = () => {
   return (

@@ -1,14 +1,14 @@
-import React, { FC, useEffect, useRef } from 'react';
-import { IProduct, SizeType } from "../../types/product";
-import "./Product.scss";
-import Button from '../UI/Button/Button';
+import { FC, useEffect, useRef } from 'react';
+import { IProduct, SizeType } from "types/product";
+import "./ProductCard.scss";
+import Button from 'components/UI/Button/Button';
 
-const boxImg: string = require("../../assets/images/Product/box.svg").default;
-const bottleImg: string = require("../../assets/images/Product/bottle.svg").default;
-const basketImg: string = require('../../assets/images/Product/basket.svg').default;
+const boxImg: string = require("assets/images/Product/box.svg").default;
+const bottleImg: string = require("assets/images/Product/bottle.svg").default;
+const basketImg: string = require('assets/images/Product/basket.svg').default;
 
 
-interface ProductItemProps {
+interface ProductCardProps {
    product: IProduct;
 }
 
@@ -17,7 +17,7 @@ interface ProductSize {
    units: string
 }
 
-const Product: FC<ProductItemProps> = ({ product }) => {
+const ProductCard: FC<ProductCardProps> = ({ product }) => {
 
    const productSize = useRef<ProductSize>({ imgURL: "", units: "" });
 
@@ -39,7 +39,7 @@ const Product: FC<ProductItemProps> = ({ product }) => {
    return (
       <div className='product-card'>
          <div className='product-card__img'>
-            <img src={require("../../assets/" + product.img)} alt={product.name} />
+            <img src={require("assets/" + product.img)} alt={product.name} />
          </div>
          <div className='product-card__size product-size'>
             <div className='product-size__img'><img src={productSize.current.imgURL} alt="Тип размера" /></div>
@@ -74,7 +74,7 @@ const Product: FC<ProductItemProps> = ({ product }) => {
    )
 }
 
-export default Product;
+export default ProductCard;
 
 
 

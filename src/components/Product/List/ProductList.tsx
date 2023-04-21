@@ -1,9 +1,8 @@
-import React from 'react';
-import { useTypedSelector } from "../../hooks/useTypedSelector";
+import { FC } from 'react';
 
-import Product from '../Product/Product';
+import Product from 'components/Product/Card/ProductCard';
 import "./ProductList.scss";
-import { IProduct } from '../../types/product';
+import { IProduct } from 'types/product';
 
 
 interface ProductListProps {
@@ -11,7 +10,7 @@ interface ProductListProps {
 }
 
 
-const ProductList: React.FC<ProductListProps> = ({ values }) => {
+const ProductList: FC<ProductListProps> = ({ values }) => {
 
    return (
       <div className='products'>

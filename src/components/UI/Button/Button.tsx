@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import './Button.scss';
 
 interface ButtonProps extends PropsWithChildren {
@@ -6,7 +6,7 @@ interface ButtonProps extends PropsWithChildren {
    onClick?: () => void
 }
 
-const Button: React.FC<ButtonProps> = ({ children, className, onClick }) => {
+const Button: FC<ButtonProps> = ({ children, className, onClick }) => {
    return (
       <button onClick={onClick} className={"button " + (className ? className : "")}>
          {children}

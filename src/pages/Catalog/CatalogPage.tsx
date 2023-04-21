@@ -1,15 +1,19 @@
-import React, { FC, useEffect, useMemo } from 'react';
-import ProductList from '../../components/ProductList/ProductList';
-import ProductCategories, { ProductCategoriesVariant } from '../../components/ProductCategories/ProductCategories';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { useActions } from "../../hooks/useActions";
-import "./ProductsPage.scss";
-import { filterProducts } from '../../utils/filter';
-import { IProduct } from '../../types/product';
-import FiltersContainer from '../../components/FiltersContainer/FiltersContainer';
-import { useResize } from '../../hooks/useResize';
+import { FC, useEffect, useMemo } from 'react';
+import "./CatalogPage.scss";
 
-const ProductsPage: FC = () => {
+import ProductList from 'components/Product/List/ProductList';
+import FiltersContainer from 'components/Filters/Container/FiltersContainer';
+import ProductCategories, { ProductCategoriesVariant } from 'components/Filters/Widgets/Categories/CategoriesWidget';
+
+import { useTypedSelector } from 'hooks/useTypedSelector';
+import { useActions } from "hooks/useActions";
+import { useResize } from 'hooks/useResize';
+
+import { filterProducts } from 'utils/filter';
+import { IProduct } from 'types/product';
+
+
+const CatalogPage: FC = () => {
    const filter = useTypedSelector(state => state.filter)
    const { products } = useTypedSelector(state => state.product)
    const { setProductCategory, getProducts } = useActions();
@@ -43,5 +47,5 @@ const ProductsPage: FC = () => {
    );
 };
 
-export default ProductsPage;
+export default CatalogPage;
 
