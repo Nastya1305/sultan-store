@@ -3,12 +3,12 @@ import "./FilterWidgetList.scss";
 import { useTypedSelector } from 'hooks/useTypedSelector';
 
 
-interface FilterListProps {
+interface FilterWidgetListProps {
    values: Map<string, number>,
    onChangeFilterList: (selectedValues: string[]) => void
 }
 
-const FilterList: FC<FilterListProps> = ({ values, onChangeFilterList }) => {
+const FilterWidgetList: FC<FilterWidgetListProps> = ({ values, onChangeFilterList }) => {
 
    const [selectedValues, setSelectedValues] = useState<string[]>([]);
    const [isFullList, setIsFullList] = useState<boolean>(false);
@@ -56,20 +56,25 @@ const FilterList: FC<FilterListProps> = ({ values, onChangeFilterList }) => {
 
    return (
       <div className='filter-list'>
-         {getCheckBoxList(0, 4)}
-         {isFullList && getCheckBoxList(4, values.size)}
          {
-            (values.size > 4) &&
-            <button
-               className={'filter-list__open-close ' + (isFullList ? "close-state" : "open-state")}
-               onClick={() => setIsFullList((prevState) => !prevState)}>
-               <span className='open'>Показать все ▼</span>
-               <span className='close'>Скрыть ▲</span>
-            </button>
+            values.size ?
+               <>
+                  {getCheckBoxList(0, 4)}
+                  {isFullList && getCheckBoxList(4, values.size)}
+                  {
+                     (values.size > 4) &&
+                     <button
+                        className={'filter-list__open-close ' + (isFullList ? "close-state" : "open-state")}
+                        onClick={() => setIsFullList((prevState) => !prevState)}>
+                        <span className='open'>Показать все ▼</span>
+                        <span className='close'>Скрыть ▲</span>
+                     </button>
+                  }
+               </>
+               : <div className='filter-list__message'>Производители не найдены</div>
          }
-
       </div>
    );
 }
 
-export default FilterList;
+export default FilterWidgetList;

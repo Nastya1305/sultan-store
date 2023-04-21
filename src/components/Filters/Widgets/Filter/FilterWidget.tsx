@@ -3,7 +3,7 @@ import "./FilterWidget.scss";
 import Search from 'components/UI/Search/Search';
 import { ManufacturersType } from 'types/filter';
 import { searchManufacturersByName } from 'utils/manufacturers';
-import FilterList from './List/FilterWidgetList';
+import FilterWidgetList from './List/FilterWidgetList';
 
 
 interface FilterWidgetProps {
@@ -23,7 +23,7 @@ const FilterWidget: FC<FilterWidgetProps> = ({ filterTitle, values, onChangeFilt
       <div className='filter'>
          <div className='filter__name'>{filterTitle}</div>
          <Search className='filter__search' onSearch={(value) => setSearchValue(value)} />
-         <FilterList values={filteredManufacturers} onChangeFilterList={onChangeFilterList} />
+         <FilterWidgetList values={filteredManufacturers} onChangeFilterList={onChangeFilterList} />
       </div>
    );
 }
