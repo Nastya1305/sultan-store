@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, useRef, useEffect } from 'react';
 import './Select.scss';
 
 interface SelectProps {
@@ -9,12 +9,28 @@ interface SelectProps {
 
 const Select: FC<SelectProps> = ({ curValue, valueList, onChange }) => {
    const [isOpen, setIsOpen] = useState<boolean>(false);
+   const select = useRef<HTMLDivElement>(null);
+
+   useEffect(() => {
+      if (!isOpen) return;
+
+      const closePopup = ({ target }: MouseEvent): void => {
+         if (!select.current) return;
+         if (!select.current.contains(target as Node)) {
+            setIsOpen(false)
+         }
+      };
+
+      document.addEventListener('click', closePopup);
+      return () => document.removeEventListener('click', closePopup);
+   }, [isOpen]);
+
 
    return (
-      <div className='select'>
+      <div className='select' ref={select}>
          <div
             className='select__header'
-            onClick={() => setIsOpen((prevState) => !prevState)}
+            onClick={() => setIsOpen(true)}
          >
             {curValue}
             <span className='select__arrow'>  ▼ </span>
