@@ -11,7 +11,7 @@ import { useResize } from 'hooks/useResize';
 
 import { getManufacturersFromProducts } from 'utils/manufacturers';
 import { filterProducts } from 'utils/filter';
-import { ManufacturersType } from 'types/filter';
+import { ManufacturersType, SortTypes } from 'types/filter';
 
 const arrowImg: string = require("assets/images/FilterContainer/arrow-down.svg").default;
 
@@ -26,7 +26,7 @@ const FiltersContainer: FC = () => {
 
    const manufacturers: ManufacturersType = useMemo(() =>
       getManufacturersFromProducts(filterProducts(products,
-         { category: filter.category, priceLimit: filter.priceLimit, manufacturers: [] })),
+         { category: filter.category, priceLimit: filter.priceLimit, manufacturers: [], sort: SortTypes.ByName })),
       [products, filter.category, filter.priceLimit])
 
    return (

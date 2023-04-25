@@ -5,19 +5,38 @@ export interface PriceLimit {
    max: number,
 }
 
+export const enum SortTypes {
+   ByName = 'По названию',
+   FirstCheap = 'Сначала дешёвые',
+   FirstExpensive = 'Сначала дорогие'
+}
+
+export function stringToSortType(str: string): SortTypes {
+   switch (str) {
+      case SortTypes.FirstCheap:
+         return SortTypes.FirstCheap;
+      case SortTypes.FirstExpensive:
+         return SortTypes.FirstExpensive;
+      default:
+         return SortTypes.ByName;
+   }
+}
+
 export type ManufacturersType = Map<string, number>;
 
 export interface FilterState {
    category: ProductCategory,
    priceLimit: PriceLimit,
-   manufacturers: string[]
+   manufacturers: string[],
+   sort: SortTypes
 }
 
 export enum FilterActionTypes {
    SET_CATEGORY = 'SET_CATEGORY',
    SET_MIN_PRICE = 'SET_MIN_PRICE',
    SET_MAX_PRICE = 'SET_MAX_PRICE',
-   SET_MANUFACTURERS = 'SET_MANUFACTURERS'
+   SET_MANUFACTURERS = 'SET_MANUFACTURERS',
+   SET_SORT = 'SET_SORT'
 }
 
 interface SetCategoryAction {
@@ -40,4 +59,9 @@ interface SetManufacturersAction {
    payload: string[]
 }
 
-export type FilterAction = SetCategoryAction | SetMinPriceAction | SetMaxPriceAction | SetManufacturersAction
+interface SetSortAction {
+   type: FilterActionTypes.SET_SORT,
+   payload: SortTypes
+}
+
+export type FilterAction = SetCategoryAction | SetMinPriceAction | SetMaxPriceAction | SetManufacturersAction | SetSortAction

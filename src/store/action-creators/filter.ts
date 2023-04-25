@@ -1,6 +1,6 @@
 import { Dispatch } from "redux";
 import { ProductCategory } from "../../types/product";
-import { FilterAction, FilterActionTypes } from "../../types/filter";
+import { FilterAction, FilterActionTypes, SortTypes } from "../../types/filter";
 
 
 export function setProductCategory(categoryName: ProductCategory): FilterAction {
@@ -17,4 +17,8 @@ export function setMaxProductPrice(maxPrice: number): FilterAction {
 
 export function setManufacturers(manufacturersNames: string[]): FilterAction {
    return { type: FilterActionTypes.SET_MANUFACTURERS, payload: manufacturersNames }
+}
+
+export function setSort(sort: SortTypes): FilterAction {
+   return { type: FilterActionTypes.SET_SORT, payload: sort }
 }
