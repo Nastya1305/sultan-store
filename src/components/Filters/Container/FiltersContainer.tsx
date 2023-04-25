@@ -1,7 +1,7 @@
 import { FC, useMemo, useState } from 'react';
 import "./FiltersContainer.scss";
 
-import ProductCategories, { ProductCategoriesVariant } from 'components/Filters/Widgets/Categories/CategoriesWidget';
+import CategoriesWidget, { CategoriesWidgetVariant } from 'components/Filters/Widgets/Categories/CategoriesWidget';
 import PriceWidget from 'components/Filters/Widgets/Price/PriceWidget';
 import FilterWidget from 'components/Filters/Widgets/Filter/FilterWidget';
 
@@ -61,8 +61,8 @@ const FiltersContainer: FC = () => {
 
          {
             (!screen.isMedia2 || screen.isMedia6) &&
-            <ProductCategories
-               variant={ProductCategoriesVariant.verticalLinkList}
+            <CategoriesWidget
+               variant={CategoriesWidgetVariant.verticalLinkList}
                currentCategory={filter.category}
                onClickCategory={(categoryItem) =>
                   setProductCategory(categoryItem)}

@@ -1,6 +1,8 @@
 @import "styles/vars";
 
 .horizontal-button-list {
+   grid-area: 2 / 1 / 3 / 5;
+
    padding: 10px 0;
    margin-bottom: 10px;
    overflow-x: scroll;

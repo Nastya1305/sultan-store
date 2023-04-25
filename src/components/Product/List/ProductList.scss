@@ -1,18 +1,19 @@
 @import "styles/vars";
 
 .products {
+   grid-area: 3 / 2 / 4 / 5;
+
    display: flex;
    flex-wrap: wrap;
-   width: 75%;
-   height: auto;
    margin: 0 -10px;
 
    @media (max-width: $media2 + px) {
+      grid-area: 4 / 1 / 5 / 5;
       width: 100%;
-      height: auto;
    }
 
    @media (max-width: $media6 + px) {
+      grid-area: 4 / 1 / 5 / 2;
       justify-content: center;
    }
 

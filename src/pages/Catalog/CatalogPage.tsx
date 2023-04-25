@@ -3,7 +3,7 @@ import "./CatalogPage.scss";
 
 import ProductList from 'components/Product/List/ProductList';
 import FiltersContainer from 'components/Filters/Container/FiltersContainer';
-import ProductCategories, { ProductCategoriesVariant } from 'components/Filters/Widgets/Categories/CategoriesWidget';
+import CategoriesWidget, { CategoriesWidgetVariant } from 'components/Filters/Widgets/Categories/CategoriesWidget';
 
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import { useActions } from "hooks/useActions";
@@ -18,7 +18,7 @@ import SortWidget from 'components/Filters/Widgets/Sort/SortWidget';
 const CatalogPage: FC = () => {
    const filter = useTypedSelector(state => state.filter)
    const { products } = useTypedSelector(state => state.product)
-   const { setProductCategory, getProducts, setSort } = useActions();
+   const { setProductCategory, getProducts } = useActions();
    const screen = useResize();
 
    const filteredProducts: IProduct[] = useMemo(() =>
@@ -29,23 +29,23 @@ const CatalogPage: FC = () => {
    }, [])
 
    return (
-      <div>
-         <SortWidget />
-
+      <div className='catalog-container'>
+         <h1 className='catalog-container__title'>Косметика и гигиена</h1>
+         <div className='catalog-container__sort-widget sort-widget'>
+            <span className='sort-widget__title'>Сортировка:</span>
+            <SortWidget />
+         </div>
          {
             (!screen.isMedia6) &&
-            <ProductCategories
-               variant={ProductCategoriesVariant.horizontalButtonList}
+            <CategoriesWidget
+               variant={CategoriesWidgetVariant.horizontalButtonList}
                currentCategory={filter.category}
                onClickCategory={(categoryItem) => setProductCategory(categoryItem)}
             />
          }
 
-         <div className='page-columns'>
-            <FiltersContainer />
-            <ProductList values={filteredProducts} />
-         </div>
-
+         <FiltersContainer />
+         <ProductList values={filteredProducts} />
       </div>
    );
 };

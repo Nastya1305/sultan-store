@@ -3,7 +3,7 @@ import { SortTypes, stringToSortType } from 'types/filter';
 import { useActions } from "hooks/useActions";
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import Select from 'components/UI/Select/Select';
-
+import "./SortWidget.scss";
 
 const sortTypes: Array<SortTypes> = [
    SortTypes.FirstCheap,

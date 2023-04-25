@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { ProductCategory } from 'types/product';
 import "./CategoriesWidget.scss";
 
-export enum ProductCategoriesVariant {
+export enum CategoriesWidgetVariant {
    horizontalButtonList = "horizontal-button-list",
    verticalLinkList = "vertical-link-list"
 }
@@ -10,7 +10,7 @@ export enum ProductCategoriesVariant {
 interface CategoriesWidgetProps {
    currentCategory: ProductCategory,
    onClickCategory: (categoryName: ProductCategory) => void,
-   variant: ProductCategoriesVariant
+   variant: CategoriesWidgetVariant
 }
 
 const categories: Array<ProductCategory> = [
@@ -40,7 +40,7 @@ const CategoriesWidget: FC<CategoriesWidgetProps> = ({ currentCategory, onClickC
    return (
       <div className={variant}>
          {
-            variant == ProductCategoriesVariant.verticalLinkList &&
+            variant == CategoriesWidgetVariant.verticalLinkList &&
             <h2 className={variant + '__title'}>Тип ухода</h2>
          }
          <ul className={variant + '__list'}>
