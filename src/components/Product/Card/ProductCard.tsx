@@ -2,6 +2,9 @@ import { FC, useMemo } from 'react';
 import { IProduct, SizeType } from "types/product";
 import "./ProductCard.scss";
 import Button from 'components/UI/Button/Button';
+// import { ReactComponent as BoxImg } from "assets/images/Product/box.svg";
+// import { ReactComponent as BottleImg } from "assets/images/Product/bottle.svg";
+// import { ReactComponent as BasketImg } from "assets/images/Product/basket.svg";
 
 const boxImg: string = require("assets/images/Product/box.svg").default;
 const bottleImg: string = require("assets/images/Product/bottle.svg").default;

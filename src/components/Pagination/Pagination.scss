@@ -1,0 +1,62 @@
+@import "styles/vars";
+
+.pagination {
+   grid-area: 5 / 1 / 6 / 5;
+   margin-top: 50px;
+
+   @media (max-width: $media3 + px) {
+      margin-top: 30px;
+   }
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   &__btn {
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: transparent;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: #3f4e65;
+
+      &:hover {
+         background-color: #ededed;
+      }
+
+      &.selected {
+         background-color: rgba(254, 202, 110, 0.3);
+      }
+   }
+
+   &__arrow {
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      fill: #ffc85e;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+         fill: #f3a50d;
+      }
+
+      &.prev {
+         margin-right: 20px;
+         transform: scale(-1, 1);
+      }
+
+      &.next {
+         margin-left: 20px;
+      }
+   }
+}

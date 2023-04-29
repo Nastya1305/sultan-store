@@ -3,7 +3,7 @@
 .catalog-container {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
-   grid-template-rows: repeat(3, auto);
+   grid-template-rows: repeat(5, auto);
 
    @media (max-width: $media2 + px) {
       grid-template-rows: repeat(4, auto);

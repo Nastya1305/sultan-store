@@ -1,8 +1,8 @@
 import { FC, useState } from 'react';
 import './Search.scss';
 import Button from 'components/UI/Button/Button';
+import { ReactComponent as SearchImg } from "assets/images/Search/search.svg";
 
-const searchImg: string = require("assets/images/Search/search.svg").default
 
 interface SearchProps {
    className?: string,
@@ -26,7 +26,7 @@ const Search: FC<SearchProps> = ({ className, onSearch }) => {
             onChange={(e) => setInputValue(e.target.value)}
          />
          <Button className='search__button'>
-            <img src={searchImg} alt="Лупа" />
+            <SearchImg />
          </Button>
       </form >
    );

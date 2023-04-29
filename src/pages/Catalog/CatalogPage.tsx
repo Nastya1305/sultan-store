@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo } from 'react';
+import { FC, useEffect, useMemo, useState } from 'react';
 import "./CatalogPage.scss";
 
 import ProductList from 'components/Product/List/ProductList';
@@ -12,6 +12,7 @@ import { useResize } from 'hooks/useResize';
 import { filterProducts } from 'utils/filter';
 import { IProduct } from 'types/product';
 import SortWidget from 'components/Filters/Widgets/Sort/SortWidget';
+import Pagination from 'components/Pagination/Pagination';
 
 
 
@@ -19,14 +20,29 @@ const CatalogPage: FC = () => {
    const filter = useTypedSelector(state => state.filter)
    const { products } = useTypedSelector(state => state.product)
    const { setProductCategory, getProducts } = useActions();
+   const [curPage, setCurPage] = useState<number>(1);
    const screen = useResize();
+
+   const cardsPerPage: number = 6;
 
    const filteredProducts: IProduct[] = useMemo(() =>
       filterProducts(products, filter), [products, filter])
 
+
+   const productsOnPage: IProduct[] = useMemo(() => {
+      if (filteredProducts.length > cardsPerPage) {
+         return filteredProducts.slice(cardsPerPage * (curPage - 1),
+            curPage * cardsPerPage || curPage * cardsPerPage - filteredProducts.length);
+      }
+      else return filteredProducts;
+   }, [filteredProducts, curPage]);
+
+
    useEffect(() => {
       getProducts()
    }, [])
+
+
 
    return (
       <div className='catalog-container'>
@@ -45,7 +61,18 @@ const CatalogPage: FC = () => {
          }
 
          <FiltersContainer />
-         <ProductList values={filteredProducts} />
+         <ProductList values={productsOnPage} />
+         {
+            filteredProducts.length > cardsPerPage &&
+            <Pagination
+               curPage={curPage}
+               pageCount={Math.ceil(filteredProducts.length / cardsPerPage)}
+               pageCountDisplayed={5}
+               onPageChange={(page) => { setCurPage(page); window.scrollTo(0, 0) }}
+            />
+         }
+
+
       </div>
    );
 };
