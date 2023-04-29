@@ -1,3 +1,5 @@
+@import "styles/vars";
+
 .button {
    background-color: #ffc85e;
    color: white;
@@ -15,5 +17,9 @@
 
    *:not(:last-child) {
       margin-right: 5px;
+   }
+
+   @media (max-width: 430px) {
+      padding: 0.8em 1em;
    }
 }

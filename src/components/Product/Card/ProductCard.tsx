@@ -60,9 +60,9 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
          </div>
          <div className='product-card__buy'>
             <div className='product-card__price'>{product.price} ₽</div>
-            <Button className='product-card__btn' onClick={() => { }}>
-               <span>В корзину</span>
-               <img src={basketImg}></img>
+            <Button className='buy-btn' onClick={() => { }}>
+               <span className='buy-btn__text'>В корзину</span>
+               <img src={basketImg} className='buy-btn__img'></img>
             </Button>
          </div>
       </div>

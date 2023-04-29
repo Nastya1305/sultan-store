@@ -9,12 +9,12 @@
 
    @media (max-width: $media2 + px) {
       grid-area: 4 / 1 / 5 / 5;
-      width: 100%;
+      // width: 100%;
    }
 
    @media (max-width: $media6 + px) {
       grid-area: 4 / 1 / 5 / 2;
-      justify-content: center;
+      // justify-content: center;
    }
 
    &__column {
@@ -26,13 +26,13 @@
          flex: 0 1 50%;
       }
 
-      @media (max-width: $media6 + px) {
-         flex: 0 1 80vw;
-         max-width: 326px;
-      }
+      // @media (max-width: $media6 + px) {
+      //    flex: 0 1 80vw;
+      //    max-width: 326px;
+      // }
 
       @media (max-width: $media7 + px) {
-         flex: 0 1 100%;
+         padding: 5px;
       }
    }
 }
