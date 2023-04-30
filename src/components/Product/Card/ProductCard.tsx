@@ -2,13 +2,11 @@ import { FC, useMemo } from 'react';
 import { IProduct, SizeType } from "types/product";
 import "./ProductCard.scss";
 import Button from 'components/UI/Button/Button';
-// import { ReactComponent as BoxImg } from "assets/images/Product/box.svg";
-// import { ReactComponent as BottleImg } from "assets/images/Product/bottle.svg";
-// import { ReactComponent as BasketImg } from "assets/images/Product/basket.svg";
+import { ReactComponent as BasketImg } from "assets/images/basket.svg";
 
 const boxImg: string = require("assets/images/Product/box.svg").default;
 const bottleImg: string = require("assets/images/Product/bottle.svg").default;
-const basketImg: string = require('assets/images/Product/basket.svg').default;
+
 
 
 interface ProductCardProps {
@@ -62,7 +60,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
             <div className='product-card__price'>{product.price} ₽</div>
             <Button className='buy-btn' onClick={() => { }}>
                <span className='buy-btn__text'>В корзину</span>
-               <img src={basketImg} className='buy-btn__img'></img>
+               <BasketImg className='buy-btn__img' />
             </Button>
          </div>
       </div>

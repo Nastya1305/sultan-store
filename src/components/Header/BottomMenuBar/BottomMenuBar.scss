@@ -1,0 +1,56 @@
+.bottom-menu-bar {
+   height: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 100px;
+      width: 100vw;
+      height: 1px;
+      background: #3f4e65;
+      opacity: 0.2;
+   }
+
+   &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 1px;
+      background: #3f4e65;
+      opacity: 0.2;
+   }
+
+   > .button {
+      padding: 19px 43px;
+      *:not(:last-child) {
+         margin-right: 12px;
+      }
+   }
+
+   .search {
+      margin-right: 35px;
+   }
+
+   .back-call {
+      margin-right: 50px;
+   }
+
+   &__logo {
+      fill: #3f4e65;
+      margin-right: 38px;
+   }
+
+   &__catalog {
+      margin-right: 15px;
+   }
+
+   &__price-list {
+      margin-right: 50px;
+   }
+}

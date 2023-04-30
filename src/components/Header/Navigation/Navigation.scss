@@ -1,0 +1,25 @@
+.navigation {
+}
+
+.nav-list {
+   display: flex;
+   &__item {
+      margin-left: 30px;
+
+      &:not(:last-child) {
+         padding-right: 30px;
+         border-right: 1px dashed rgba(63, 78, 101, 0.1);
+      }
+
+      a {
+         font-weight: 400;
+         font-size: 14px;
+         line-height: 150%;
+         color: #3f4e65;
+
+         &:hover {
+            color: #f3a50d;
+         }
+      }
+   }
+}

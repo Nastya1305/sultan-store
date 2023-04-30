@@ -1,6 +1,7 @@
 @import "styles/vars";
 
 .catalog-container {
+   margin-top: 45px;
    display: grid;
    grid-template-columns: repeat(4, 1fr);
    grid-template-rows: repeat(5, auto);

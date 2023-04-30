@@ -1,9 +1,16 @@
-import React from 'react';
 import ProductsPage from './pages/Catalog/CatalogPage';
+import Header from 'components/Header/Header';
 
 const App = () => {
   return (
-    <ProductsPage />
+    <>
+      <Header />
+      <div className='container'>
+        <ProductsPage />
+      </div>
+
+    </>
+
   );
 };
 

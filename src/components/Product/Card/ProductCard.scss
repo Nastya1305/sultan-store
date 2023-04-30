@@ -120,6 +120,12 @@
    letter-spacing: 0.15em;
    text-transform: uppercase;
 
+   &__img {
+      fill: white;
+      width: 25px;
+      height: 25px;
+   }
+
    @media (max-width: $media6 + px) {
       &__text {
          display: none;
