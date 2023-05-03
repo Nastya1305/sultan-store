@@ -1,8 +1,21 @@
+@import "styles/vars";
+
 .top-menu-bar {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   height: 60px;
+   height: $top-menu-h;
+
+   &::before {
+      content: "";
+      position: absolute;
+      left: -20vw;
+      top: 100%;
+      width: 120vw;
+      height: 1px;
+      background: #3f4e65;
+      opacity: 0.2;
+   }
 
    &__contacts {
       display: flex;
@@ -14,6 +27,44 @@
             padding-left: 20px;
             border-left: 1px dashed rgba(63, 78, 101, 0.1);
          }
+      }
+   }
+
+   @media (max-width: $media2 + px) and (min-width: $media4 + px) {
+      height: $top-menu-tablet-h;
+   }
+
+   @media (max-width: $media2 + px) {
+      &__logo {
+         height: 67%;
+         fill: #3f4e65;
+      }
+
+      > button {
+         padding: 0;
+         width: 42px;
+         height: 42px;
+      }
+   }
+
+   @media (max-width: $media4 + px) {
+      .cart {
+         &__img {
+            margin-right: 0;
+            svg {
+               height: 25px;
+               width: 40px;
+            }
+         }
+
+         &__info {
+            display: none;
+         }
+      }
+
+      > button {
+         width: 32px;
+         height: 32px;
       }
    }
 }

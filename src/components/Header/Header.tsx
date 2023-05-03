@@ -11,8 +11,11 @@ const Header: FC = () => {
          <div className='header'>
             <div className='container'>
                <TopMenuBar />
+            </div>
+            <div className='container'>
                <BottomMenuBar />
             </div>
+
          </div>
          <div className='space'></div>
       </>

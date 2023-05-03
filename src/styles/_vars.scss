@@ -7,3 +7,14 @@ $media4: 767.98;
 $media5: 710;
 $media6: 630; //список в одну колонку
 $media7: 479.98;
+
+$top-menu-h: 60px;
+$top-menu-tablet-h: 90px;
+
+$bottom-menu-desk-h: 100px;
+$bottom-menu-tablet-h: 50px;
+$bottom-menu-mobile-h: 40px;
+
+$header-desk-h: $top-menu-h + $bottom-menu-desk-h;
+$header-tablet-h: $top-menu-tablet-h + $bottom-menu-tablet-h;
+$header-mobile-h: $top-menu-h + $bottom-menu-mobile-h;

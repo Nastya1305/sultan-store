@@ -1,3 +1,5 @@
+@import "styles/vars";
+
 .header {
    position: fixed;
    z-index: 1;
@@ -6,5 +8,13 @@
 }
 
 .space {
-   height: 160px;
+   height: $header-desk-h;
+
+   @media (max-width: $media2 + px) {
+      height: $header-tablet-h;
+   }
+
+   @media (max-width: $media4 + px) {
+      height: $header-mobile-h;
+   }
 }
