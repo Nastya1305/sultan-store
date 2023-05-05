@@ -1,5 +1,6 @@
 import { FC, PropsWithChildren } from 'react';
-import './Button.scss';
+import style from './Button.module.css';
+import classNames from 'classnames';
 
 interface ButtonProps extends PropsWithChildren {
    className?: string,
@@ -8,7 +9,10 @@ interface ButtonProps extends PropsWithChildren {
 
 const Button: FC<ButtonProps> = ({ children, className, onClick }) => {
    return (
-      <button onClick={onClick} className={"button " + (className ? className : "")}>
+      <button
+         onClick={onClick}
+         className={classNames(style.button, className)}
+      >
          {children}
       </button>
    );

@@ -1,0 +1,21 @@
+.button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   cursor: pointer;
+
+   color: white;
+   background-color: #ffc85e;
+
+   border-radius: 80px;
+   border: 0;
+}
+
+.button:hover {
+   background-color: #f3a50d;
+}
+
+.button:not(:last-child) {
+   margin-right: 5px;
+}

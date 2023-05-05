@@ -4,13 +4,16 @@ import App from './App';
 import { Provider } from "react-redux";
 import { store } from "./store";
 import "./styles/index.scss";
+import Search from 'components/UI/Search/Search';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <Provider store={store}>
-    <App />
+    <Search onSearch={() => { }} />
+    {/* <App /> */}
   </Provider>,
 );
 
