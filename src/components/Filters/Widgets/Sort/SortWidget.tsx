@@ -17,7 +17,7 @@ const SortWidget: FC = () => {
 
    return (
       <Select
-         curValue={sort}
+         startValue={sort}
          valueList={sortTypes}
          onChange={(sortType) => setSort(stringToSortType(sortType))}
       />

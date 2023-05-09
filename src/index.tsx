@@ -4,7 +4,8 @@ import App from './App';
 import { Provider } from "react-redux";
 import { store } from "./store";
 import "./styles/index.scss";
-import Search from 'components/UI/Search/Search';
+import Select from 'components/UI/Select/Select';
+
 
 
 const root = ReactDOM.createRoot(
@@ -12,8 +13,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <Provider store={store}>
-    <Search onSearch={() => { }} />
-    {/* <App /> */}
+    {/* <Select valueList={['первое', 'второе', 'третье']} startValue='пое' onChange={(a) => console.log(a)} /> */}
+    <App />
   </Provider>,
 );
 

@@ -2,13 +2,14 @@ import { FC, useState, useRef, useEffect } from 'react';
 import './Select.scss';
 
 interface SelectProps {
-   curValue: string,
+   startValue?: string,
    valueList: string[],
    onChange: (newValue: string) => void
 }
 
-const Select: FC<SelectProps> = ({ curValue, valueList, onChange }) => {
+const Select: FC<SelectProps> = ({ startValue, valueList, onChange }) => {
    const [isOpen, setIsOpen] = useState<boolean>(false);
+   const [curValue, setCurValue] = useState<string>(startValue || valueList[0] || '')
    const select = useRef<HTMLDivElement>(null);
 
    useEffect(() => {
@@ -44,7 +45,7 @@ const Select: FC<SelectProps> = ({ curValue, valueList, onChange }) => {
                      <li
                         key={value}
                         className={'select__option' + (value == curValue ? ' selected' : '')}
-                        onClick={() => { setIsOpen(false); onChange(value) }}
+                        onClick={() => { setIsOpen(false); setCurValue(value); onChange(value) }}
                      >
                         {value}
                      </li>)
