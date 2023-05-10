@@ -1,12 +1,15 @@
 import { FC, useEffect, useMemo, useState } from 'react';
-import "./Pagination.scss";
 import { ReactComponent as ArrowImg } from "assets/images/Pagination/arrow-right.svg";
+import styles from './Pagination.module.scss';
+import classNames from 'classnames';
+
 
 interface PaginationProps {
    curPage: number,
    pageCount: number,
    pageCountDisplayed: number,
-   onPageChange: (page: number) => void
+   onPageChange: (page: number) => void,
+   className?: string
 }
 
 interface PageRange {
@@ -15,7 +18,7 @@ interface PageRange {
 }
 
 
-const Pagination: FC<PaginationProps> = ({ curPage, pageCount, pageCountDisplayed, onPageChange }) => {
+const Pagination: FC<PaginationProps> = ({ curPage, pageCount, pageCountDisplayed, onPageChange, className }) => {
 
    const [pageRangeDisplayed, setPageRangeDisplayed] = useState<PageRange>({ start: 1, end: pageCountDisplayed });
 
@@ -51,10 +54,10 @@ const Pagination: FC<PaginationProps> = ({ curPage, pageCount, pageCountDisplaye
    }
 
    return (
-      <div className='pagination'>
+      <div className={classNames(styles.pagination, className)}>
          {
             curPage > 1 &&
-            <div className='pagination__arrow prev'
+            <div className={classNames(styles.arrow, 'prev')}
                onClick={() => {
                   onPageChange(--curPage);
                   changeRange(curPage);
@@ -67,7 +70,7 @@ const Pagination: FC<PaginationProps> = ({ curPage, pageCount, pageCountDisplaye
 
          {allPages.slice(pageRangeDisplayed.start - 1, pageRangeDisplayed.end).map(page =>
             <div key={page}
-               className={'pagination__btn' + (page == curPage ? ' selected' : '')}
+               className={classNames(styles.btn, { 'selected': page == curPage })}
                onClick={() => {
                   onPageChange(page);
                   changeRange(page);
@@ -79,7 +82,7 @@ const Pagination: FC<PaginationProps> = ({ curPage, pageCount, pageCountDisplaye
 
          {
             curPage < pageCount &&
-            <div className='pagination__arrow next'
+            <div className={classNames(styles.arrow, 'next')}
                onClick={() => {
                   onPageChange(++curPage);
                   changeRange(curPage);

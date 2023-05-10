@@ -1,16 +1,21 @@
 import { FC } from 'react';
-import './BackCall.scss'
 import salesTeamImg from 'assets/images/Header/sales-team.png';
+import styles from './BackCall.module.scss';
+import classNames from 'classnames';
 
-const BackCall: FC = () => {
+interface BackCallProps {
+   className?: string
+}
+
+const BackCall: FC<BackCallProps> = ({ className }) => {
    return (
-      <div className='back-call'>
-         <div className='back-call__text'>
-            <div className='back-call__phone-number'>+7 (777) 490-00-91</div>
-            <div className='back-call__secondary'>время работы: 9:00-20:00</div>
-            <a href='#' className='back-call__link'>Заказать звонок</a>
+      <div className={classNames(styles.backCall, className)}>
+         <div className={styles.text}>
+            <div className={styles.phoneNumber}>+7 (777) 490-00-91</div>
+            <div className={styles.secondary}>время работы: 9:00-20:00</div>
+            <a href='#' className={styles.link}>Заказать звонок</a>
          </div>
-         <div className='back-call__img'>
+         <div className={styles.img}>
             <img src={salesTeamImg} alt="Отдел продаж" />
          </div>
       </div>

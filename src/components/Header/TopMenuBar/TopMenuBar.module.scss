@@ -1,9 +1,12 @@
 @import "styles/vars";
 
-.top-menu-bar {
+.topMenuBar {
+   position: relative;
+
    display: flex;
    justify-content: space-between;
    align-items: center;
+
    height: $top-menu-h;
 
    &::before {
@@ -11,23 +14,11 @@
       position: absolute;
       left: -20vw;
       top: 100%;
+
       width: 120vw;
       height: 1px;
       background: #3f4e65;
       opacity: 0.2;
-   }
-
-   &__contacts {
-      display: flex;
-      padding-right: 20px;
-
-      .contact {
-         padding-right: 20px;
-         &:not(:first-child) {
-            padding-left: 20px;
-            border-left: 1px dashed rgba(63, 78, 101, 0.1);
-         }
-      }
    }
 
    @media (max-width: $media2 + px) and (min-width: $media4 + px) {
@@ -35,12 +26,12 @@
    }
 
    @media (max-width: $media2 + px) {
-      &__logo {
+      .logo {
          height: 67%;
          fill: #3f4e65;
       }
 
-      > button {
+      .burgerBtn {
          padding: 0;
          width: 42px;
          height: 42px;
@@ -48,23 +39,22 @@
    }
 
    @media (max-width: $media4 + px) {
-      .cart {
-         &__img {
-            margin-right: 0;
-            svg {
-               height: 25px;
-               width: 40px;
-            }
-         }
-
-         &__info {
-            display: none;
-         }
-      }
-
-      > button {
+      .burgerBtn {
          width: 32px;
          height: 32px;
       }
+   }
+}
+
+.contacts {
+   display: flex;
+   padding-right: 20px;
+}
+
+.contact {
+   padding-right: 20px;
+   &:not(:first-child) {
+      padding-left: 20px;
+      border-left: 1px dashed rgba(63, 78, 101, 0.1);
    }
 }

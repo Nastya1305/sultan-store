@@ -1,18 +1,19 @@
 import { FC, useMemo, useState } from 'react';
-import "./FilterWidget.scss";
 import Search from 'components/UI/Search/Search';
 import { ManufacturersType } from 'types/filter';
 import { searchManufacturersByName } from 'utils/manufacturers';
 import FilterWidgetList from './List/FilterWidgetList';
-
+import styles from './FilterWidget.module.scss';
+import classNames from 'classnames';
 
 interface FilterWidgetProps {
    filterTitle: string,
    values: Map<string, number>,
-   onChangeFilterList: (selectedValues: string[]) => void
+   onChangeFilterList: (selectedValues: string[]) => void,
+   className?: string
 }
 
-const FilterWidget: FC<FilterWidgetProps> = ({ filterTitle, values, onChangeFilterList }) => {
+const FilterWidget: FC<FilterWidgetProps> = ({ filterTitle, values, onChangeFilterList, className }) => {
 
    const [searchValue, setSearchValue] = useState<string>("");
    const filteredManufacturers: ManufacturersType = useMemo(() =>
@@ -20,9 +21,9 @@ const FilterWidget: FC<FilterWidgetProps> = ({ filterTitle, values, onChangeFilt
       [values, searchValue])
 
    return (
-      <div className='filter'>
-         <div className='filter__name'>{filterTitle}</div>
-         <Search className='filter__search' onSearch={(value) => setSearchValue(value)} />
+      <div className={classNames(styles.filter, className)}>
+         <div className={styles.name}>{filterTitle}</div>
+         <Search className={styles.search} onSearch={(value) => setSearchValue(value)} />
          <FilterWidgetList values={filteredManufacturers} onChangeFilterList={onChangeFilterList} />
       </div>
    );

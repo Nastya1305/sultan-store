@@ -1,0 +1,146 @@
+@import "styles/vars";
+
+.dropdown {
+   position: fixed;
+   top: $header-tablet-h;
+   left: 0;
+
+   width: 100vw;
+   height: 100vh;
+   background: rgba(17, 17, 17, 0.5);
+
+   @media (max-width: $media4 + px) {
+      top: $header-mobile-h;
+   }
+}
+
+.menu {
+   padding: 20px 0 30px;
+   background-color: white;
+}
+
+.contacts {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+
+   padding-bottom: 33px;
+   border-bottom: 1px dashed rgba(63, 78, 100, 0.2);
+
+   > :not(:last-child) {
+      margin-bottom: 15px;
+   }
+}
+
+.salesTeamContact {
+   color: #3f4e65;
+   line-height: 150%;
+}
+
+.salesTeamContactInfo {
+   font-weight: 300;
+   font-size: 12px;
+   margin-left: 33px;
+}
+
+.backCallLink {
+   position: relative;
+   margin-left: 33px;
+
+   font-weight: 400;
+   font-size: 10px;
+   line-height: 150%;
+   text-decoration-line: underline;
+   color: #3f4e65;
+
+   &:hover {
+      color: #f3a50d;
+   }
+
+   &::before {
+      content: "🕻";
+
+      position: absolute;
+      left: -39px;
+      transform: rotate(-45deg);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+
+      font-size: 16px;
+      background-color: #ffc85e;
+      color: white;
+   }
+}
+
+.navBlock {
+   padding-top: 25px;
+}
+
+.nav {
+   margin-bottom: 22px;
+}
+
+.priceListBtn {
+   padding: 1em 2.5em;
+   width: 100%;
+   max-width: 250px;
+
+   @media (max-width: 430px) {
+      padding: 0.8em 1em;
+   }
+}
+
+.burger {
+   position: relative;
+   width: 35%;
+   height: 30%;
+   padding: 0;
+
+   span,
+   &::before,
+   &::after {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background-color: white;
+      transition: all 0.3s ease 0s;
+   }
+
+   span {
+      top: 50%;
+      transform: translateY(-50%);
+   }
+
+   &::before {
+      content: "";
+      top: 0;
+   }
+
+   &::after {
+      content: "";
+      bottom: 0;
+   }
+
+   &:global(.close) {
+      &::before {
+         transform: rotate(45deg);
+         top: 49%;
+      }
+
+      &::after {
+         transform: rotate(-45deg);
+         top: 49%;
+      }
+
+      span {
+         transform: scale(0);
+      }
+   }
+}

@@ -1,14 +1,15 @@
 import React, { FC, useEffect, useState, useMemo } from 'react';
-import "./FilterWidgetList.scss";
 import { useTypedSelector } from 'hooks/useTypedSelector';
-
+import styles from './FilterWidgetList.module.scss';
+import classNames from 'classnames';
 
 interface FilterWidgetListProps {
    values: Map<string, number>,
-   onChangeFilterList: (selectedValues: string[]) => void
+   onChangeFilterList: (selectedValues: string[]) => void,
+   className?: string
 }
 
-const FilterWidgetList: FC<FilterWidgetListProps> = ({ values, onChangeFilterList }) => {
+const FilterWidgetList: FC<FilterWidgetListProps> = ({ values, onChangeFilterList, className }) => {
 
    const [selectedValues, setSelectedValues] = useState<string[]>([]);
    const [isFullList, setIsFullList] = useState<boolean>(false);
@@ -38,10 +39,10 @@ const FilterWidgetList: FC<FilterWidgetListProps> = ({ values, onChangeFilterLis
    function getCheckBoxList(from: number, to: number): JSX.Element[] {
       return (
          valuesList.slice(from, to).map(([valueName, num]) =>
-            <div className='filter-list__value' key={valueName}>
+            <div className={styles.value} key={valueName}>
 
                <input type="checkbox"
-                  className='filter-list__checkbox'
+                  className={styles.checkbox}
                   id={valueName} value={valueName}
                   checked={selectedValues.includes(valueName)}
                   onChange={handleCheckBoxChange} />
@@ -55,7 +56,7 @@ const FilterWidgetList: FC<FilterWidgetListProps> = ({ values, onChangeFilterLis
    }
 
    return (
-      <div className='filter-list'>
+      <div className={classNames(styles.filterList, className)}>
          {
             values.size ?
                <>
@@ -64,14 +65,14 @@ const FilterWidgetList: FC<FilterWidgetListProps> = ({ values, onChangeFilterLis
                   {
                      (values.size > 4) &&
                      <button
-                        className={'filter-list__open-close ' + (isFullList ? "close-state" : "open-state")}
+                        className={classNames(styles.openCloseBtn, { "close-state": isFullList, "open-state": !isFullList })}
                         onClick={() => setIsFullList((prevState) => !prevState)}>
-                        <span className='open'>Показать все ▼</span>
-                        <span className='close'>Скрыть ▲</span>
+                        <span className={styles.open}>Показать все ▼</span>
+                        <span className={styles.close}>Скрыть ▲</span>
                      </button>
                   }
                </>
-               : <div className='filter-list__message'>Производители не найдены</div>
+               : <div className={styles.message}>Производители не найдены</div>
          }
       </div>
    );

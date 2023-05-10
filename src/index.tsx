@@ -4,7 +4,12 @@ import App from './App';
 import { Provider } from "react-redux";
 import { store } from "./store";
 import "./styles/index.scss";
-import Select from 'components/UI/Select/Select';
+import FiltersContainer from 'components/Filters/Container/FiltersContainer';
+import CatalogPage from 'pages/Catalog/CatalogPage';
+
+
+
+
 
 
 
@@ -13,7 +18,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <Provider store={store}>
-    {/* <Select valueList={['первое', 'второе', 'третье']} startValue='пое' onChange={(a) => console.log(a)} /> */}
+    {/* <CatalogPage /> */}
     <App />
   </Provider>,
 );

@@ -1,16 +1,18 @@
 import { FC } from 'react';
 import { ProductCategory } from 'types/product';
-import "./CategoriesWidget.scss";
+import styles from './CategoriesWidget.module.scss';
+import classNames from 'classnames';
 
 export enum CategoriesWidgetVariant {
-   horizontalButtonList = "horizontal-button-list",
-   verticalLinkList = "vertical-link-list"
+   horizontalButtonList = "horizontalButtonList",
+   verticalLinkList = "verticalLinkList"
 }
 
 interface CategoriesWidgetProps {
    currentCategory: ProductCategory,
    onClickCategory: (categoryName: ProductCategory) => void,
-   variant: CategoriesWidgetVariant
+   variant: CategoriesWidgetVariant,
+   className?: string
 }
 
 const categories: Array<ProductCategory> = [
@@ -28,26 +30,22 @@ const categories: Array<ProductCategory> = [
    ProductCategory.PaperProducts,
 ];
 
-const CategoriesWidget: FC<CategoriesWidgetProps> = ({ currentCategory, onClickCategory, variant }) => {
-
-   function getItemClassName(category: ProductCategory): string {
-      let className: string = variant + '__item';
-      if (category === currentCategory)
-         className += " active";
-      return className;
-   }
+const CategoriesWidget: FC<CategoriesWidgetProps> = ({ currentCategory, onClickCategory, variant, className }) => {
 
    return (
-      <div className={variant}>
+      <div className={classNames(styles[variant], className)}>
          {
             variant == CategoriesWidgetVariant.verticalLinkList &&
-            <h2 className={variant + '__title'}>Тип ухода</h2>
+            <h2 className={styles.title}>Тип ухода</h2>
          }
-         <ul className={variant + '__list'}>
+         <ul className={styles.list}>
             {
                categories.map((category, index) =>
                   <li key={index}>
-                     <button onClick={() => onClickCategory(category)} className={getItemClassName(category)}>
+                     <button
+                        onClick={() => onClickCategory(category)}
+                        className={classNames(styles.item, { "active": category === currentCategory })}
+                     >
                         {category}
                      </button>
                   </li>)

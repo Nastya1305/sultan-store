@@ -1,23 +1,25 @@
 import { FC } from 'react'
-import './Contact.scss';
+import styles from './Contact.module.scss';
+import classNames from 'classnames';
 
 interface ContactProps {
    img: string,
    info: string,
    secondary: string,
+   className?: string
 }
 
-const Contact: FC<ContactProps> = ({ img, info, secondary }) => {
+const Contact: FC<ContactProps> = ({ img, info, secondary, className }) => {
    return (
-      <div className='contact'>
-         <div className='contact__img'>
+      <div className={classNames(styles.contact, className)}>
+         <div className={styles.img}>
             <img src={img} alt='иконка' />
          </div>
-         <div className='contact__text'>
-            <div className='contact__info'>
+         <div>
+            <div className={styles.info}>
                {info}
             </div>
-            <div className='contact__secondary'>
+            <div className={styles.secondary}>
                {secondary}
             </div>
          </div>

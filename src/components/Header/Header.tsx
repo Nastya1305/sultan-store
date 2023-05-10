@@ -1,14 +1,13 @@
 import { FC } from 'react';
-import "./Header.scss";
 import TopMenuBar from 'components/Header/TopMenuBar/TopMenuBar';
 import BottomMenuBar from './BottomMenuBar/BottomMenuBar';
-
+import styles from './Header.module.scss';
 
 const Header: FC = () => {
 
    return (
       <>
-         <div className='header'>
+         <div className={styles.header}>
             <div className='container'>
                <TopMenuBar />
             </div>
@@ -17,7 +16,7 @@ const Header: FC = () => {
             </div>
 
          </div>
-         <div className='space'></div>
+         <div className={styles.space}></div>
       </>
 
    )

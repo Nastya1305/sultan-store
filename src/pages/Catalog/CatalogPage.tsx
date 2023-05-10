@@ -1,5 +1,6 @@
 import { FC, useEffect, useMemo, useState } from 'react';
-import "./CatalogPage.scss";
+import styles from './CatalogPage.module.scss';
+import classNames from 'classnames';
 
 import ProductList from 'components/Product/List/ProductList';
 import FiltersContainer from 'components/Filters/Container/FiltersContainer';
@@ -45,26 +46,28 @@ const CatalogPage: FC = () => {
 
 
    return (
-      <div className='catalog-container'>
-         <h1 className='catalog-container__title'>Косметика и гигиена</h1>
-         <div className='catalog-container__sort-widget sort-widget'>
-            <span className='sort-widget__title'>Сортировка:</span>
+      <div className={styles.container}>
+         <h1 className={styles.title}>Косметика и гигиена</h1>
+         <div className={styles.sortWidget}>
+            <span className={styles.sortTitle}>Сортировка:</span>
             <SortWidget />
          </div>
          {
             (!screen.isMedia6) &&
             <CategoriesWidget
+               className={styles.categories}
                variant={CategoriesWidgetVariant.horizontalButtonList}
                currentCategory={filter.category}
                onClickCategory={(categoryItem) => setProductCategory(categoryItem)}
             />
          }
 
-         <FiltersContainer />
-         <ProductList values={productsOnPage} />
+         <FiltersContainer className={styles.filters} />
+         <ProductList className={styles.products} values={productsOnPage} />
          {
             filteredProducts.length > cardsPerPage &&
             <Pagination
+               className={styles.pagination}
                curPage={curPage}
                pageCount={Math.ceil(filteredProducts.length / cardsPerPage)}
                pageCountDisplayed={5}

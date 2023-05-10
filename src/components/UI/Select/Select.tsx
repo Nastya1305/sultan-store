@@ -1,13 +1,16 @@
 import { FC, useState, useRef, useEffect } from 'react';
-import './Select.scss';
+import styles from './Select.module.scss';
+import classNames from 'classnames';
+
 
 interface SelectProps {
+   className?: string,
    startValue?: string,
    valueList: string[],
    onChange: (newValue: string) => void
 }
 
-const Select: FC<SelectProps> = ({ startValue, valueList, onChange }) => {
+const Select: FC<SelectProps> = ({ startValue, valueList, onChange, className }) => {
    const [isOpen, setIsOpen] = useState<boolean>(false);
    const [curValue, setCurValue] = useState<string>(startValue || valueList[0] || '')
    const select = useRef<HTMLDivElement>(null);
@@ -28,23 +31,23 @@ const Select: FC<SelectProps> = ({ startValue, valueList, onChange }) => {
 
 
    return (
-      <div className='select' ref={select}>
+      <div className={styles.select} ref={select}>
          <div
-            className='select__header'
+            className={styles.header}
             onClick={() => setIsOpen(true)}
          >
             {curValue}
-            <span className='select__arrow'>  ▼ </span>
+            <span className={styles.arrow}>  ▼ </span>
          </div>
 
          {
             isOpen &&
-            <ul className='select__popup'>
+            <ul className={styles.popup}>
                {
                   valueList.map(value =>
                      <li
                         key={value}
-                        className={'select__option' + (value == curValue ? ' selected' : '')}
+                        className={classNames(styles.option, className, { 'selected': value == curValue })}
                         onClick={() => { setIsOpen(false); setCurValue(value); onChange(value) }}
                      >
                         {value}
@@ -53,7 +56,7 @@ const Select: FC<SelectProps> = ({ startValue, valueList, onChange }) => {
             </ul>
 
          }
-      </div>
+      </div >
 
    );
 }

@@ -1,0 +1,22 @@
+@import "styles/vars";
+
+.products {
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0 -10px;
+}
+
+.column {
+   display: flex;
+   align-items: start;
+   flex: 0 1 33.333%;
+   padding: 10px;
+
+   @media (max-width: $media3 + px) {
+      flex: 0 1 50%;
+   }
+
+   @media (max-width: $media7 + px) {
+      padding: 5px;
+   }
+}

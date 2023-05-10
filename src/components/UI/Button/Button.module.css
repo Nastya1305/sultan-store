@@ -16,6 +16,6 @@
    background-color: #f3a50d;
 }
 
-.button:not(:last-child) {
+.button > :not(:last-child) {
    margin-right: 5px;
 }

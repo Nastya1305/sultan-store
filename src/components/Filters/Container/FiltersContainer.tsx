@@ -1,5 +1,6 @@
 import { FC, useMemo, useState } from 'react';
-import "./FiltersContainer.scss";
+import styles from './FiltersContainer.module.scss';
+import classNames from 'classnames';
 
 import CategoriesWidget, { CategoriesWidgetVariant } from 'components/Filters/Widgets/Categories/CategoriesWidget';
 import PriceWidget from 'components/Filters/Widgets/Price/PriceWidget';
@@ -16,7 +17,11 @@ import { ManufacturersType, SortTypes } from 'types/filter';
 const arrowImg: string = require("assets/images/FilterContainer/arrow-down.svg").default;
 
 
-const FiltersContainer: FC = () => {
+interface FiltersContainerProps {
+   className?: string
+}
+
+const FiltersContainer: FC<FiltersContainerProps> = ({ className }) => {
    const filter = useTypedSelector(state => state.filter)
    const { products } = useTypedSelector(state => state.product)
    const { setProductCategory, setMinProductPrice, setMaxProductPrice, setManufacturers } = useActions();
@@ -30,14 +35,14 @@ const FiltersContainer: FC = () => {
       [products, filter.category, filter.priceLimit])
 
    return (
-      <div className='filters-container'>
-         <div className='filters'>
-            <div className='filters__header filters-header'>
-               <div className='filters-header__text'>Подбор по параметрам</div>
+      <div className={classNames(styles.container, className)}>
+         <div className={styles.filters}>
+            <div className={styles.header}>
+               <div className={styles.text}>Подбор по параметрам</div>
                {
                   screen.isMedia2 &&
                   <button
-                     className={'filters-header__btn ' + (isFilterListOpen ? "up" : "down")}
+                     className={classNames(styles.btn, { "up": isFilterListOpen, "down": !isFilterListOpen })}
                      onClick={() => setIsFilterListOpen((prevState) => !prevState)}
                   >
                      <img src={arrowImg} alt="стрелка" />
@@ -45,8 +50,9 @@ const FiltersContainer: FC = () => {
                }
             </div>
 
-            <div className={'filters__list ' + (!screen.isMedia2 || isFilterListOpen ? "open" : "close")}>
+            <div className={classNames(styles.list, { "open": !screen.isMedia2 || isFilterListOpen, "close": screen.isMedia2 && !isFilterListOpen })}>
                <PriceWidget
+                  className={styles.priceWidget}
                   startLimit={filter.priceLimit}
                   onChangeMinLimit={(minPrice) => setMinProductPrice(minPrice)}
                   onChangeMaxLimit={(maxPrice) => setMaxProductPrice(maxPrice)}

@@ -1,10 +1,8 @@
 @import "styles/vars";
 
-.horizontal-button-list {
-   grid-area: 2 / 1 / 3 / 5;
-
+.horizontalButtonList {
    padding: 10px 0;
-   margin-bottom: 10px;
+
    overflow-x: scroll;
    scrollbar-width: 0;
 
@@ -13,7 +11,7 @@
       height: 0;
    }
 
-   &__list {
+   .list {
       width: $contentWidth + px;
       height: 100%;
 
@@ -28,7 +26,7 @@
       display: flex;
    }
 
-   &__item {
+   .item {
       display: flex;
       align-items: center;
       padding: 18px 15px;
@@ -49,33 +47,34 @@
          background-color: rgba(255, 198, 80, 0.2);
       }
 
-      &.active {
+      &:global(.active) {
          background-color: #ffc85e;
          color: white;
       }
    }
 }
 
-.vertical-link-list {
-   border-top: 1px dashed #c6cad1;
+.verticalLinkList {
    padding: 20px 0;
+   border-top: 1px dashed #c6cad1;
 
-   &__title {
+   .title {
       font-weight: 500;
       font-size: 16px;
       line-height: 150%;
       text-transform: uppercase;
       color: #111111;
+
       margin-bottom: 15px;
    }
 
-   &__list {
+   .list {
       *:not(:last-child) {
          margin-bottom: 10px;
       }
    }
 
-   &__item {
+   .item {
       background-color: transparent;
       border: 0;
       padding: 0;
@@ -91,7 +90,7 @@
          text-decoration: underline;
       }
 
-      &.active {
+      &:global(.active) {
          color: #f3a200;
          font-weight: 500;
       }

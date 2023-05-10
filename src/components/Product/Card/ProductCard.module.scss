@@ -1,0 +1,137 @@
+@import "styles/vars";
+
+.product {
+   display: flex;
+   flex-direction: column;
+
+   max-width: 490px;
+   width: 100%;
+   padding: 9% 7%;
+
+   background: #ffffff;
+   box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
+   border-radius: 10px;
+
+   font-family: "Inter";
+   color: #111111;
+   line-height: 130%;
+
+   @media (max-width: $media7 + px) {
+      padding: 4% 5%;
+   }
+}
+
+.productImg {
+   img {
+      width: 100%;
+      object-fit: contain;
+   }
+
+   @media (max-width: $media7 + px) {
+      margin-bottom: 10px;
+   }
+}
+
+.size {
+   display: flex;
+   margin-bottom: 3%;
+
+   *:not(:last-child) {
+      margin-right: 8px;
+   }
+
+   @media (max-width: $media7 + px) {
+      display: none;
+   }
+}
+
+.title {
+   height: 4rem;
+   overflow: hidden;
+   margin-bottom: 7%;
+
+   font-weight: 500;
+   font-size: 16px;
+   color: inherit;
+
+   &:hover {
+      text-decoration: underline;
+   }
+
+   @media (max-width: $media6 + px) {
+      height: auto;
+      max-height: 4rem;
+   }
+
+   @media (max-width: $media7 + px) {
+      font-size: 14px;
+      max-height: 2.5rem;
+   }
+}
+
+.properties {
+   margin-bottom: 5%;
+
+   @media (max-width: $media7 + px) {
+      display: none;
+   }
+}
+
+.property {
+   font-size: 14px;
+   margin-bottom: 1.6%;
+
+   @media (max-width: $media5 + px) {
+      font-size: 12px;
+   }
+}
+
+.propertyKey {
+   font-weight: 300;
+}
+
+.propertyValue {
+   font-weight: 500;
+}
+
+.buy {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-right: 8%;
+}
+
+.price {
+   font-weight: 800;
+   font-size: 16px;
+
+   @media (max-width: $media7 + px) {
+      font-size: 14px;
+   }
+}
+
+.btn {
+   font-weight: 700;
+   font-size: 10px;
+   line-height: 12px;
+   letter-spacing: 0.15em;
+   text-transform: uppercase;
+
+   padding: 1em 2.5em;
+
+   @media (max-width: 430px) {
+      padding: 0.8em 1em;
+   }
+}
+
+.btnImg {
+   fill: white;
+   width: 25px;
+   height: 25px;
+}
+
+.btnText {
+   @media (max-width: $media6 + px) {
+      display: none;
+   }
+}

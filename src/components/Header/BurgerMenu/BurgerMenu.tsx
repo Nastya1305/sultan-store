@@ -1,10 +1,15 @@
 import Button from 'components/UI/Button/Button';
 import { FC, useState, useEffect } from 'react';
-import './BurgerMenu.scss';
 import Contact from '../Contact/Contact';
 import Navigation, { NavigationVariant } from '../Navigation/Navigation';
+import styles from './BurgerMenu.module.scss';
+import classNames from 'classnames';
 
-const BurgerMenu: FC = () => {
+interface BurgerMenuProps {
+   className?: string
+}
+
+const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
    const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
    useEffect(() => {
@@ -19,18 +24,18 @@ const BurgerMenu: FC = () => {
 
    return (
       <>
-         <Button onClick={() => setMenuOpen(prevState => !prevState)}>
-            <div className={'burger' + (menuOpen ? ' close' : '')}>
+         <Button className={className} onClick={() => setMenuOpen(prevState => !prevState)}>
+            <div className={classNames(styles.burger, { 'close': menuOpen })}>
                <span />
             </div>
          </Button>
 
          {
             menuOpen &&
-            <div className='dropdown'>
-               <div className='dropdown__menu'>
-                  <div className='menu container'>
-                     <div className="menu__contacts">
+            <div className={styles.dropdown}>
+               <div className={styles.menu}>
+                  <div className='container'>
+                     <div className={styles.contacts}>
                         <Contact
                            img={require('assets/images/Header/contacts/location.svg').default}
                            info='г. Кокчетав, ул. Ж. Ташенова 129Б'
@@ -41,20 +46,20 @@ const BurgerMenu: FC = () => {
                            info='opt.sultan@mail.ru'
                            secondary='На связи в любое время'
                         />
-                        <div className='sales-team-contact'>
+                        <div className={styles.salesTeamContact}>
                            <Contact
                               img={require('assets/images/Header/contacts/phone.svg').default}
                               info='Отдел продаж'
                               secondary='+7 (777) 490-00-91'
                            />
-                           <div className='sales-team-contact__info'>время работы: 9:00-20:00</div>
-                           <a className='back-call__link' href='#'>Заказать звонок</a>
+                           <div className={styles.salesTeamContactInfo}>время работы: 9:00-20:00</div>
+                           <a className={styles.backCallLink} href='#'>Заказать звонок</a>
                         </div>
                      </div>
 
-                     <div className="menu__nav">
-                        <Navigation variant={NavigationVariant.verticalLinkList} />
-                        <Button className=''>
+                     <div className={styles.navBlock}>
+                        <Navigation className={styles.nav} variant={NavigationVariant.verticalLinkList} />
+                        <Button className={styles.priceListBtn}>
                            <span>Прайс-лист</span>
                            <img src={require('assets/images/Header/download-icon.svg').default} alt='иконка' />
                         </Button>

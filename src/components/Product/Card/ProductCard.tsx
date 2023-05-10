@@ -1,6 +1,6 @@
 import { FC, useMemo } from 'react';
 import { IProduct, SizeType } from "types/product";
-import "./ProductCard.scss";
+import styles from './ProductCard.module.scss';
 import Button from 'components/UI/Button/Button';
 import { ReactComponent as BasketImg } from "assets/images/basket.svg";
 
@@ -30,37 +30,39 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
    }, [product.sizeType])
 
    return (
-      <div className='product-card'>
-         <div className='product-card__img'>
+      <div className={styles.product}>
+         <div className={styles.productImg}>
             <img src={require("assets/" + product.img)} alt={product.name} />
          </div>
-         <div className='product-card__size product-size'>
-            <div className='product-size__img'><img src={productSize.imgURL} alt="Тип размера" /></div>
-            <div className='product-size__value'>{product.size + " " + productSize.units}</div>
+         <div className={styles.size}>
+            <div>
+               <img src={productSize.imgURL} alt="Тип размера" />
+            </div>
+            <div>{product.size + " " + productSize.units}</div>
          </div>
-         <a href="#" className='product-card__title'>
+         <a href="#" className={styles.title}>
             <b>{product.brand} </b>
             <span>{product.name}</span>
          </a>
-         <div className='product-card__properties'>
-            <div className="product-property">
-               <span className="product-property__key">Штрихкод: </span>
-               <span className="product-property__value">{product.barcode}</span>
+         <div className={styles.properties}>
+            <div className={styles.property}>
+               <span className={styles.propertyKey}>Штрихкод: </span>
+               <span className={styles.propertyValue}>{product.barcode}</span>
             </div>
-            <div className="product-property">
-               <span className="product-property__key">Производитель: </span>
-               <span className="product-property__value">{product.manufacturer}</span>
+            <div className={styles.property}>
+               <span className={styles.propertyKey}>Производитель: </span>
+               <span className={styles.propertyValue}>{product.manufacturer}</span>
             </div>
-            <div className="product-property">
-               <span className="product-property__key">Бренд: </span>
-               <span className="product-property__value">{product.brand}</span>
+            <div className={styles.property}>
+               <span className={styles.propertyKey}>Бренд: </span>
+               <span className={styles.propertyValue}>{product.brand}</span>
             </div>
          </div>
-         <div className='product-card__buy'>
-            <div className='product-card__price'>{product.price} ₽</div>
-            <Button className='buy-btn' onClick={() => { }}>
-               <span className='buy-btn__text'>В корзину</span>
-               <BasketImg className='buy-btn__img' />
+         <div className={styles.buy}>
+            <div className={styles.price}>{product.price} ₽</div>
+            <Button className={styles.btn} onClick={() => { }}>
+               <span className={styles.btnText}>В корзину</span>
+               <BasketImg className={styles.btnImg} />
             </Button>
          </div>
       </div>
