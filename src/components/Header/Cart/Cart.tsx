@@ -1,11 +1,10 @@
 import { FC } from 'react';
 import { ReactComponent as BasketImg } from "assets/images/basket.svg";
 import styles from './Cart.module.scss';
-import classNames from 'classnames';
 
 const Cart: FC = () => {
    return (
-      <div className={styles.cart}>
+      <div className={styles.container}>
          <div className={styles.img}>
             <BasketImg />
             <div className={styles.quantity}>3</div>

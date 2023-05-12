@@ -30,7 +30,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
    }, [product.sizeType])
 
    return (
-      <div className={styles.product}>
+      <div className={styles.container}>
          <div className={styles.productImg}>
             <img src={require("assets/" + product.img)} alt={product.name} />
          </div>

@@ -11,7 +11,7 @@ interface ContactProps {
 
 const Contact: FC<ContactProps> = ({ img, info, secondary, className }) => {
    return (
-      <div className={classNames(styles.contact, className)}>
+      <div className={classNames(styles.container, className)}>
          <div className={styles.img}>
             <img src={img} alt='иконка' />
          </div>

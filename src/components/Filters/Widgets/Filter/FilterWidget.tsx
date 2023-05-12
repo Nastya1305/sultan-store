@@ -4,7 +4,7 @@ import { ManufacturersType } from 'types/filter';
 import { searchManufacturersByName } from 'utils/manufacturers';
 import FilterWidgetList from './List/FilterWidgetList';
 import styles from './FilterWidget.module.scss';
-import classNames from 'classnames';
+
 
 interface FilterWidgetProps {
    filterTitle: string,
@@ -21,7 +21,7 @@ const FilterWidget: FC<FilterWidgetProps> = ({ filterTitle, values, onChangeFilt
       [values, searchValue])
 
    return (
-      <div className={classNames(styles.filter, className)}>
+      <div className={className}>
          <div className={styles.name}>{filterTitle}</div>
          <Search className={styles.search} onSearch={(value) => setSearchValue(value)} />
          <FilterWidgetList values={filteredManufacturers} onChangeFilterList={onChangeFilterList} />

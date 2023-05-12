@@ -1,4 +1,4 @@
-.button {
+.container {
    display: flex;
    align-items: center;
    justify-content: center;
@@ -10,12 +10,12 @@
 
    border-radius: 80px;
    border: 0;
-}
 
-.button:hover {
-   background-color: #f3a50d;
-}
+   &:hover {
+      background-color: #f3a50d;
+   }
 
-.button > :not(:last-child) {
-   margin-right: 5px;
+   :not(:last-child) {
+      margin-right: 5px;
+   }
 }

@@ -9,7 +9,7 @@ interface BackCallProps {
 
 const BackCall: FC<BackCallProps> = ({ className }) => {
    return (
-      <div className={classNames(styles.backCall, className)}>
+      <div className={classNames(styles.container, className)}>
          <div className={styles.text}>
             <div className={styles.phoneNumber}>+7 (777) 490-00-91</div>
             <div className={styles.secondary}>время работы: 9:00-20:00</div>

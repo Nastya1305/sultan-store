@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { PriceLimit } from 'types/filter';
 import styles from './PriceWidget.module.scss';
-import classNames from 'classnames';
+
 
 interface PriceWidgetProps {
    startLimit: PriceLimit,
@@ -12,7 +12,7 @@ interface PriceWidgetProps {
 
 const PriceWidget: FC<PriceWidgetProps> = ({ startLimit, onChangeMinLimit, onChangeMaxLimit, className }) => {
    return (
-      <div className={classNames(styles.priceWidget, className)}>
+      <div className={className}>
          <div className={styles.title}>Цена <span>₽</span></div>
          <div className={styles.values}>
             <input type="number"

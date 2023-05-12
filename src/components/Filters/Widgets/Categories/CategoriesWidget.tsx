@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { ProductCategory } from 'types/product';
 import styles from './CategoriesWidget.module.scss';
 import classNames from 'classnames';
+import { ProductCategory } from 'types/product';
 
 export enum CategoriesWidgetVariant {
    horizontalButtonList = "horizontalButtonList",

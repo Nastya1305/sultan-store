@@ -7,7 +7,7 @@ const Header: FC = () => {
 
    return (
       <>
-         <div className={styles.header}>
+         <div className={styles.container}>
             <div className='container'>
                <TopMenuBar />
             </div>

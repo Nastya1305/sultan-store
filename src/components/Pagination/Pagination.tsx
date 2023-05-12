@@ -54,7 +54,7 @@ const Pagination: FC<PaginationProps> = ({ curPage, pageCount, pageCountDisplaye
    }
 
    return (
-      <div className={classNames(styles.pagination, className)}>
+      <div className={classNames(styles.container, className)}>
          {
             curPage > 1 &&
             <div className={classNames(styles.arrow, 'prev')}

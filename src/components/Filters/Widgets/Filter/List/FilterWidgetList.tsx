@@ -56,7 +56,7 @@ const FilterWidgetList: FC<FilterWidgetListProps> = ({ values, onChangeFilterLis
    }
 
    return (
-      <div className={classNames(styles.filterList, className)}>
+      <div className={className}>
          {
             values.size ?
                <>

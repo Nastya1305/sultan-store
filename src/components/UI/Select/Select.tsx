@@ -31,7 +31,7 @@ const Select: FC<SelectProps> = ({ startValue, valueList, onChange, className })
 
 
    return (
-      <div className={styles.select} ref={select}>
+      <div className={styles.container} ref={select}>
          <div
             className={styles.header}
             onClick={() => setIsOpen(true)}

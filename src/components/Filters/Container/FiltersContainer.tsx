@@ -35,7 +35,7 @@ const FiltersContainer: FC<FiltersContainerProps> = ({ className }) => {
       [products, filter.category, filter.priceLimit])
 
    return (
-      <div className={classNames(styles.container, className)}>
+      <div className={className}>
          <div className={styles.filters}>
             <div className={styles.header}>
                <div className={styles.text}>Подбор по параметрам</div>
