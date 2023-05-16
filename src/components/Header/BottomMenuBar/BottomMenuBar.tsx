@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { ReactComponent as Logo } from 'assets/images/Header/logo.svg';
 import Button from 'components/UI/Button/Button';
-import Search from 'components/UI/Search/Search';
+import Input from 'components/UI/Input/Input';
 import BackCall from 'components/Header/BackCall/BackCall';
 import Cart from 'components/Header/Cart/Cart';
 import { useResize } from 'hooks/useResize';
@@ -27,8 +27,13 @@ const BottomMenuBar: FC<BottomMenuBarProps> = ({ className }) => {
                   <span>Каталог</span>
                   <CatalogIcon />
                </Button>
-               <Search className={styles.search} onSearch={() => { }} />
-               <BackCall className={styles.backCall} />
+               <Input
+                  className={styles.search}
+                  onInput={() => { }}
+                  placeholder='Поиск...'
+                  btnIcon={require('assets/images/Search/search.svg').default}
+               />
+               <BackCall className={styles.backCall} textAlign='right' color='dark' withImg />
                <Button className={classNames(styles.priceListBtn, styles.btn)}>
                   <span>Прайс-лист</span>
                   <img src={require('assets/images/Header/download-icon.svg').default} alt='иконка' />

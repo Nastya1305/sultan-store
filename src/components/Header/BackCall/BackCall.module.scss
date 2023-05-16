@@ -1,10 +1,35 @@
 .container {
    display: flex;
    align-items: center;
+
+   .right {
+      text-align: end;
+   }
+
+   .left {
+      text-align: start;
+   }
+
+   .light {
+      color: white;
+      .link {
+         color: inherit;
+      }
+   }
+
+   .dark {
+      .phoneNumber {
+         color: #111111;
+      }
+
+      .secondary,
+      .link {
+         color: #3f4e65;
+      }
+   }
 }
 
 .text {
-   text-align: end;
    margin-right: 14px;
 
    *:not(:last-child) {
@@ -16,14 +41,12 @@
    font-weight: 600;
    font-size: 14px;
    line-height: 150%;
-   color: #111111;
 }
 
 .secondary {
    font-weight: 300;
    font-size: 12px;
    line-height: 150%;
-   color: #3f4e65;
 }
 
 .link {
@@ -31,7 +54,6 @@
    font-size: 10px;
    line-height: 150%;
    text-decoration-line: underline;
-   color: #3f4e65;
 
    &:hover {
       color: #f3a50d;

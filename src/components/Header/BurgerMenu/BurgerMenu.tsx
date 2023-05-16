@@ -1,7 +1,7 @@
 import Button from 'components/UI/Button/Button';
 import { FC, useState, useEffect } from 'react';
 import Contact from '../Contact/Contact';
-import Navigation, { NavigationVariant } from '../Navigation/Navigation';
+import Navigation, { NavigationVariant } from '../../Navigation/Navigation';
 import styles from './BurgerMenu.module.scss';
 import classNames from 'classnames';
 
@@ -40,17 +40,20 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
                            img={require('assets/images/Header/contacts/location.svg').default}
                            info='г. Кокчетав, ул. Ж. Ташенова 129Б'
                            secondary='(Рынок Восточный)'
+                           color='dark'
                         />
                         <Contact
                            img={require('assets/images/Header/contacts/mail.svg').default}
                            info='opt.sultan@mail.ru'
                            secondary='На связи в любое время'
+                           color='dark'
                         />
                         <div className={styles.salesTeamContact}>
                            <Contact
                               img={require('assets/images/Header/contacts/phone.svg').default}
                               info='Отдел продаж'
                               secondary='+7 (777) 490-00-91'
+                              color='dark'
                            />
                            <div className={styles.salesTeamContactInfo}>время работы: 9:00-20:00</div>
                            <a className={styles.backCallLink} href='#'>Заказать звонок</a>
@@ -58,7 +61,12 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
                      </div>
 
                      <div className={styles.navBlock}>
-                        <Navigation className={styles.nav} variant={NavigationVariant.verticalLinkList} />
+                        <Navigation className={styles.nav}
+                           variant={NavigationVariant.verticalLinkList}
+                           color='dark'
+                           title='Меню сайта:'
+                           items={['О компании', 'Доставка и оплата', 'Возврат', 'Контакты']}
+                        />
                         <Button className={styles.priceListBtn}>
                            <span>Прайс-лист</span>
                            <img src={require('assets/images/Header/download-icon.svg').default} alt='иконка' />

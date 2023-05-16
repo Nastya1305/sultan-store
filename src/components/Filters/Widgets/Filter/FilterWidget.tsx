@@ -1,5 +1,5 @@
 import { FC, useMemo, useState } from 'react';
-import Search from 'components/UI/Search/Search';
+import Input from 'components/UI/Input/Input';
 import { ManufacturersType } from 'types/filter';
 import { searchManufacturersByName } from 'utils/manufacturers';
 import FilterWidgetList from './List/FilterWidgetList';
@@ -23,7 +23,12 @@ const FilterWidget: FC<FilterWidgetProps> = ({ filterTitle, values, onChangeFilt
    return (
       <div className={className}>
          <div className={styles.name}>{filterTitle}</div>
-         <Search className={styles.search} onSearch={(value) => setSearchValue(value)} />
+         <Input
+            className={styles.search}
+            onInput={(value) => setSearchValue(value)}
+            placeholder='Поиск...'
+            btnIcon={require('assets/images/Search/search.svg').default}
+         />
          <FilterWidgetList values={filteredManufacturers} onChangeFilterList={onChangeFilterList} />
       </div>
    );

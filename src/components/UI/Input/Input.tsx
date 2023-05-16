@@ -1,38 +1,39 @@
 import { FC, useState } from 'react';
-import styles from './Search.module.scss';
+import styles from './Input.module.scss';
 import classNames from 'classnames';
 import Button from 'components/UI/Button/Button';
-import { ReactComponent as SearchImg } from "assets/images/Search/search.svg";
 
 
-interface SearchProps {
+interface InputProps {
    className?: string,
-   onSearch: (searchValue: string) => void,
+   placeholder: string,
+   btnIcon: string,
+   onInput: (inputValue: string) => void,
 }
 
-const Search: FC<SearchProps> = ({ className, onSearch }) => {
+const Input: FC<InputProps> = ({ className, placeholder, btnIcon, onInput }) => {
    const [inputValue, setInputValue] = useState<string>("");
    return (
       <form className={classNames(styles.form, className)}
          onSubmit={
             (e) => {
                e.preventDefault();
-               onSearch(inputValue)
+               onInput(inputValue)
             }
          } >
          <input type='search'
             className={styles.input}
-            placeholder='Поиск...'
+            placeholder={placeholder}
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
          />
          <Button className={styles.button}>
-            <SearchImg />
+            <img src={btnIcon} alt="Картинка на кнопке" />
          </Button>
       </form >
    );
 }
 
-export default Search;
+export default Input;
 
 
