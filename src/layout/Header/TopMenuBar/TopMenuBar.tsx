@@ -15,7 +15,7 @@ interface TopMenuBarProps {
 const TopMenuBar: FC<TopMenuBarProps> = ({ className }) => {
    const screen = useResize();
    return (
-      <div className={classNames(styles.container, className)}>
+      <div className={classNames(styles.container, className, 'container')}>
          {!screen.isMedia2 ?
             (<>
                <div className={styles.contacts}>

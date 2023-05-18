@@ -1,7 +1,7 @@
 @import "styles/vars";
 
 .container {
-   position: relative;
+   // position: relative;
 
    height: $bottom-menu-desk-h;
 
@@ -9,18 +9,18 @@
    align-items: center;
    justify-content: space-between;
 
-   &::after {
-      content: "";
-      position: absolute;
-      left: -20vw;
-      bottom: 0;
+   // &::after {
+   //    content: "";
+   //    position: absolute;
+   //    left: 0;
+   //    bottom: 0;
 
-      width: 120vw;
-      height: 1px;
+   //    width: 120vw;
+   //    height: 1px;
 
-      background: #3f4e65;
-      opacity: 0.2;
-   }
+   //    background: #3f4e65;
+   //    opacity: 0.2;
+   // }
 
    @media (max-width: $media2 + px) {
       height: $bottom-menu-tablet-h;

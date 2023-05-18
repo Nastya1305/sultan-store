@@ -9,18 +9,6 @@
 
    height: $top-menu-h;
 
-   &::before {
-      content: "";
-      position: absolute;
-      left: -20vw;
-      top: 100%;
-
-      width: 120vw;
-      height: 1px;
-      background: #3f4e65;
-      opacity: 0.2;
-   }
-
    @media (max-width: $media2 + px) and (min-width: $media4 + px) {
       height: $top-menu-tablet-h;
    }

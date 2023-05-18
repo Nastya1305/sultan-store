@@ -19,7 +19,7 @@ const BottomMenuBar: FC<BottomMenuBarProps> = ({ className }) => {
    const screen = useResize();
 
    return (
-      <div className={classNames(styles.container, className)}>
+      <div className={classNames(styles.container, className, 'container')}>
          {!screen.isMedia2 ?
             <>
                <Logo className={styles.logo} />
