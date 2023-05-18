@@ -33,12 +33,7 @@
 }
 
 .size {
-   display: flex;
    margin-bottom: 3%;
-
-   *:not(:last-child) {
-      margin-right: 8px;
-   }
 
    @media (max-width: $media7 + px) {
       display: none;

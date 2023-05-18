@@ -6,8 +6,8 @@ import Navigation, { NavigationVariant } from 'components/Navigation/Navigation'
 import { ReactComponent as Logo } from 'assets/images/Header/logo.svg';
 import Button from 'components/UI/Button/Button';
 import Input from 'components/UI/Input/Input';
-import Contact from 'components/Header/Contact/Contact';
-import BackCall from 'components/Header/BackCall/BackCall';
+import Contact from 'components/Contact/Contact';
+import BackCall from 'components/BackCall/BackCall';
 import { ReactComponent as VisaIcon } from 'assets/images/Footer/Visa.svg';
 import { ReactComponent as MasterCardIcon } from 'assets/images/Footer/MasterCard.svg';
 import { ReactComponent as TelegramIcon } from 'assets/images/Footer/telegram.svg';

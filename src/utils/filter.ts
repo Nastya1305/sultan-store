@@ -28,3 +28,7 @@ function sortProducts(products: IProduct[], sortType: SortTypes): IProduct[] {
          return [...products.sort((product1, product2) => product2.price - product1.price)]
    }
 }
+
+export function getProductByBarcode(products: IProduct[], barcode: number): IProduct | undefined {
+   return products.find((product) => { return product.barcode === barcode });
+}

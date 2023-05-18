@@ -4,9 +4,7 @@ import App from './App';
 import { Provider } from "react-redux";
 import { store } from "./store";
 import "./styles/index.scss";
-import FiltersContainer from 'components/Filters/Container/FiltersContainer';
-import CatalogPage from 'pages/Catalog/CatalogPage';
-
+import { BrowserRouter } from 'react-router-dom';
 
 
 
@@ -18,8 +16,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <Provider store={store}>
-    {/* <CatalogPage /> */}
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
 );
 

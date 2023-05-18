@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import TopMenuBar from 'components/Header/TopMenuBar/TopMenuBar';
+import TopMenuBar from './TopMenuBar/TopMenuBar';
 import BottomMenuBar from './BottomMenuBar/BottomMenuBar';
 import styles from './Header.module.scss';
 

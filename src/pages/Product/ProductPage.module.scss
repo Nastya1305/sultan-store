@@ -1,0 +1,121 @@
+@import "styles/vars";
+
+.container {
+   display: flex;
+   padding: 45px 0 80px;
+
+   @media (max-width: $media3 + px) {
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 0 60px;
+   }
+
+   @media (max-width: $media7 + px) {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 0 30px;
+   }
+}
+
+.img {
+   flex: 0 0 40%;
+   max-width: 600px;
+   margin-right: 40px;
+
+   @media (max-width: $media3 + px) {
+      margin-right: 0;
+   }
+}
+
+.info {
+}
+
+.title {
+   font-weight: 400;
+   font-size: 30px;
+   line-height: 150%;
+   color: #111111;
+
+   margin-bottom: 10px;
+
+   @media (max-width: $media4 + px) {
+      font-size: 24px;
+   }
+
+   @media (max-width: $media6 + px) {
+      font-size: 16px;
+   }
+}
+
+.size {
+   margin-bottom: 25px;
+}
+
+.buy {
+   display: flex;
+   align-items: center;
+   margin-bottom: 35px;
+
+   > :not(:last-child) {
+      margin-right: 40px;
+   }
+
+   @media (max-width: $media6 + px) {
+      margin-bottom: 25px;
+   }
+
+   .price {
+      font-weight: 800;
+      font-size: 30px;
+      line-height: 130%;
+      color: #111111;
+
+      @media (max-width: $media6 + px) {
+         font-size: 20px;
+      }
+   }
+
+   .btn {
+      padding: 21px 39px;
+      @media (max-width: $media6 + px) {
+         padding: 15px 23px;
+      }
+
+      .btnText {
+         font-weight: 700;
+         font-size: 14px;
+         line-height: 17px;
+         color: #ffffff;
+      }
+
+      svg {
+         fill: #ffffff;
+         width: 23px;
+         height: 23px;
+      }
+   }
+}
+
+.properties {
+   margin-bottom: 30px;
+
+   .property {
+      font-size: 14px;
+      margin-bottom: 5px;
+
+      .propertyKey {
+         font-weight: 300;
+      }
+
+      .propertyValue {
+         font-weight: 500;
+      }
+   }
+}
+
+.description {
+   font-weight: 300;
+   font-size: 14px;
+   line-height: 150%;
+   color: #3f4e65;
+}

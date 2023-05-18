@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Contact from 'components/Header/Contact/Contact';
+import Contact from 'components/Contact/Contact';
 import Navigation, { NavigationVariant } from 'components/Navigation/Navigation';
 import { useResize } from 'hooks/useResize';
 import { ReactComponent as Logo } from 'assets/images/Header/logo.svg';
