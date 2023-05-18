@@ -1,26 +1,11 @@
 @import "styles/vars";
 
 .container {
-   // position: relative;
-
    height: $bottom-menu-desk-h;
 
    display: flex;
    align-items: center;
    justify-content: space-between;
-
-   // &::after {
-   //    content: "";
-   //    position: absolute;
-   //    left: 0;
-   //    bottom: 0;
-
-   //    width: 120vw;
-   //    height: 1px;
-
-   //    background: #3f4e65;
-   //    opacity: 0.2;
-   // }
 
    @media (max-width: $media2 + px) {
       height: $bottom-menu-tablet-h;
@@ -48,25 +33,25 @@
 
 .priceListBtn {
    margin-right: 50px;
+
+   @media (max-width: 1340px) {
+      margin-right: 20px;
+   }
 }
 
 .search {
    margin-right: 35px;
+
+   @media (max-width: 1340px) {
+      margin-right: 20px;
+   }
 }
 
 .backCall {
    margin-right: 50px;
 
-   @media (max-width: 1340px) {
+   @media (max-width: 1345px) {
       margin-right: 20px;
-
-      &__text {
-         text-align: center;
-      }
-
-      &__img {
-         display: none;
-      }
    }
 }
 
