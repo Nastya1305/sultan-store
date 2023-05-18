@@ -7,7 +7,7 @@ const Header: FC = () => {
 
    return (
       <>
-         <div className={styles.container}>
+         <header className={styles.container}>
             <div className='container'>
                <TopMenuBar />
             </div>
@@ -15,7 +15,7 @@ const Header: FC = () => {
                <BottomMenuBar />
             </div>
 
-         </div>
+         </header>
          <div className={styles.space}></div>
       </>
 
