@@ -60,11 +60,10 @@
    }
 
    &::before {
-      content: "🕻";
+      content: url("../../../assets/images/Header/phone.svg");
 
       position: absolute;
       left: -39px;
-      transform: rotate(-45deg);
 
       display: flex;
       align-items: center;
