@@ -6,11 +6,12 @@ import styles from './BurgerMenu.module.scss';
 import classNames from 'classnames';
 
 interface BurgerMenuProps {
-   className?: string
+   className?: string,
+   menuOpen: boolean,
+   setMenuOpen(open: boolean): void
 }
 
-const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
-   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+const BurgerMenu: FC<BurgerMenuProps> = ({ className, menuOpen, setMenuOpen }) => {
 
    useEffect(() => {
       if (menuOpen)
@@ -24,15 +25,9 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
 
    return (
       <>
-         <Button className={className} onClick={() => setMenuOpen(prevState => !prevState)}>
-            <div className={classNames(styles.burger, { 'close': menuOpen })}>
-               <span />
-            </div>
-         </Button>
-
          {
             menuOpen &&
-            <div className={styles.dropdown}>
+            <div className={classNames(styles.container, className)}>
                <div className={styles.menu}>
                   <div className='container'>
                      <div className={styles.contacts}>
