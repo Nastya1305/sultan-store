@@ -16,8 +16,7 @@ const ProductPage: FC = () => {
    const { products } = useTypedSelector(state => state.product);
 
    const product: IProduct | undefined = useMemo(() => {
-      console.log(products)
-      console.log(getProductByBarcode(products, 3071937))
+      window.scrollTo(0, 0);
       return getProductByBarcode(products, Number(barcode));
    }, [products, barcode]);
 
