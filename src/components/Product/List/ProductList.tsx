@@ -14,11 +14,15 @@ const ProductList: FC<ProductListProps> = ({ values, className }) => {
 
    return (
       <div className={classNames(styles.container, className)}>
-         {values.map(product =>
-            <div className={styles.column} key={product.barcode}>
-               <Product product={product} />
-            </div>
-         )}
+         {
+            values.length ? values.map(product =>
+               <div className={styles.column} key={product.barcode}>
+                  <Product product={product} />
+               </div>)
+               :
+               <div className={styles.message}>Товары не найдены</div>
+
+         }
       </div>
    );
 };
