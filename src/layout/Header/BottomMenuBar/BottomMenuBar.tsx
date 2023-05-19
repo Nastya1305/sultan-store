@@ -9,6 +9,7 @@ import { ReactComponent as CatalogIcon } from 'assets/images/Header/catalog-icon
 import { ReactComponent as SearchIcon } from "assets/images/Search/search.svg";
 import styles from './BottomMenuBar.module.scss';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 
 interface BottomMenuBarProps {
@@ -23,10 +24,10 @@ const BottomMenuBar: FC<BottomMenuBarProps> = ({ className }) => {
          {!screen.isMedia2 ?
             <>
                <Logo className={styles.logo} />
-               <Button className={classNames(styles.btn, styles.catalogBtn)}>
+               <Link to='/sultan-store/' className={classNames(styles.btn, styles.catalogBtn)}>
                   <span>Каталог</span>
                   <CatalogIcon />
-               </Button>
+               </Link>
                <Input
                   className={styles.search}
                   onInput={() => { }}
@@ -42,10 +43,10 @@ const BottomMenuBar: FC<BottomMenuBarProps> = ({ className }) => {
             </>
             :
             <>
-               <button className={styles.mobileBtn}>
+               <Link to='/sultan-store/' className={styles.mobileBtn}>
                   <CatalogIcon />
                   <span>Каталог</span>
-               </button>
+               </Link>
                <button className={styles.mobileBtn}>
                   <SearchIcon />
                   <span>Поиск</span>

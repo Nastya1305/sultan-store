@@ -29,6 +29,26 @@
 
 .catalogBtn {
    margin-right: 15px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   cursor: pointer;
+
+   color: white;
+   background-color: #ffc85e;
+
+   border-radius: 80px;
+   border: 0;
+
+   &:hover {
+      background-color: #f3a50d;
+   }
+
+   :not(:last-child) {
+      margin-right: 5px;
+   }
 }
 
 .priceListBtn {
