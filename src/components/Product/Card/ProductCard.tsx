@@ -6,6 +6,7 @@ import { ReactComponent as BasketImg } from "assets/images/basket.svg";
 
 import { Link } from 'react-router-dom';
 import ProductSize from '../Size/ProductSize';
+import BuyBtn from '../BuyBtn/BuyBtn';
 
 
 interface ProductCardProps {
@@ -40,10 +41,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
          </div>
          <div className={styles.buy}>
             <div className={styles.price}>{product.price} ₽</div>
-            <Button className={styles.btn} onClick={() => { }}>
-               <span className={styles.btnText}>В корзину</span>
-               <BasketImg className={styles.btnImg} />
-            </Button>
+            <BuyBtn product={product} className={styles.btn} hasSmallForm />
          </div>
       </div >
    )

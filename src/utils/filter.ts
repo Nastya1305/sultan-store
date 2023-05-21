@@ -1,4 +1,4 @@
-import { FilterState, SortTypes } from "../types/filter";
+import { SortTypes } from "../types/filter";
 import { IProduct, ProductCategory } from "../types/product";
 
 export function filterProducts(products: IProduct[],

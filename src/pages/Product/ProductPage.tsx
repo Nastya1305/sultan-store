@@ -9,6 +9,7 @@ import ProductSize from 'components/Product/Size/ProductSize';
 import Button from 'components/UI/Button/Button';
 import { ReactComponent as BasketImg } from "assets/images/basket.svg";
 import Accordion from 'components/UI/Accordion/Accordion';
+import BuyBtn from 'components/Product/BuyBtn/BuyBtn';
 
 
 const ProductPage: FC = () => {
@@ -40,10 +41,7 @@ const ProductPage: FC = () => {
 
                      <div className={styles.buy}>
                         <div className={styles.price}>{product.price} ₽</div>
-                        <Button className={styles.btn} onClick={() => { }}>
-                           <span className={styles.btnText}>В корзину</span>
-                           <BasketImg className={styles.btnImg} />
-                        </Button>
+                        <BuyBtn className={styles.btn} product={product} hasSmallForm={false} />
                      </div>
 
                      <div className={styles.properties}>

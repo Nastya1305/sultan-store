@@ -57,12 +57,18 @@
    align-items: center;
    margin-bottom: 35px;
 
+   height: 65px;
+
    > :not(:last-child) {
-      margin-right: 40px;
+      margin-right: 60px;
    }
 
    @media (max-width: $media6 + px) {
       margin-bottom: 25px;
+
+      > :not(:last-child) {
+         margin-right: 40px;
+      }
    }
 
    .price {
@@ -77,22 +83,9 @@
    }
 
    .btn {
-      padding: 21px 39px;
+      padding: 19px 39px;
       @media (max-width: $media6 + px) {
          padding: 15px 23px;
-      }
-
-      .btnText {
-         font-weight: 700;
-         font-size: 14px;
-         line-height: 17px;
-         color: #ffffff;
-      }
-
-      svg {
-         fill: #ffffff;
-         width: 23px;
-         height: 23px;
       }
    }
 }

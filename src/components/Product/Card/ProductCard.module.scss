@@ -106,27 +106,9 @@
 }
 
 .btn {
-   font-weight: 700;
-   font-size: 10px;
-   line-height: 12px;
-   letter-spacing: 0.15em;
-   text-transform: uppercase;
-
    padding: 1em 2.5em;
 
    @media (max-width: 430px) {
       padding: 0.8em 1em;
-   }
-}
-
-.btnImg {
-   fill: white;
-   width: 25px;
-   height: 25px;
-}
-
-.btnText {
-   @media (max-width: $media6 + px) {
-      display: none;
    }
 }
