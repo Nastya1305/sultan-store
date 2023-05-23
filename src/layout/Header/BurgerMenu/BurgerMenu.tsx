@@ -1,7 +1,7 @@
-import Button from 'components/UI/Button/Button';
+import Button from 'shared/UI/Button/Button';
 import { FC, useState, useEffect } from 'react';
-import Contact from 'components/Contact/Contact';
-import Navigation, { NavigationVariant } from 'components/Navigation/Navigation';
+import Contact from 'shared/Contact/Contact';
+import Navigation, { NavigationVariant } from 'shared/Navigation/Navigation';
 import styles from './BurgerMenu.module.scss';
 import classNames from 'classnames';
 

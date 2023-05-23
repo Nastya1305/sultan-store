@@ -2,9 +2,9 @@ import { FC, useMemo, useState } from 'react';
 import styles from './FiltersContainer.module.scss';
 import classNames from 'classnames';
 
-import CategoriesWidget, { CategoriesWidgetVariant } from 'components/Filters/Widgets/Categories/CategoriesWidget';
-import PriceWidget from 'components/Filters/Widgets/Price/PriceWidget';
-import FilterWidget from 'components/Filters/Widgets/Filter/FilterWidget';
+import Categories, { CategoriesVariant } from 'screens/Catalog/Categories/Categories';
+import PriceFilter from 'screens/Catalog/PriceFilter/PriceFilter';
+import FilterWidget from 'screens/Catalog/FilterWidget/FilterWidget';
 
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import { useActions } from "hooks/useActions";
@@ -51,7 +51,7 @@ const FiltersContainer: FC<FiltersContainerProps> = ({ className }) => {
             </div>
 
             <div className={classNames(styles.list, { "open": !screen.isMedia2 || isFilterListOpen, "close": screen.isMedia2 && !isFilterListOpen })}>
-               <PriceWidget
+               <PriceFilter
                   className={styles.priceWidget}
                   startLimit={filter.priceLimit}
                   onChangeMinLimit={(minPrice) => setMinProductPrice(minPrice)}
@@ -67,8 +67,8 @@ const FiltersContainer: FC<FiltersContainerProps> = ({ className }) => {
 
          {
             (!screen.isMedia2 || screen.isMedia6) &&
-            <CategoriesWidget
-               variant={CategoriesWidgetVariant.verticalLinkList}
+            <Categories
+               variant={CategoriesVariant.verticalLinkList}
                currentCategory={filter.category}
                onClickCategory={(categoryItem) =>
                   setProductCategory(categoryItem)}

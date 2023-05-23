@@ -1,8 +1,8 @@
 import { FC, useMemo, useState } from 'react';
-import Input from 'components/UI/Input/Input';
+import Input from 'shared/UI/Input/Input';
 import { ManufacturersType } from 'types/filter';
 import { searchManufacturersByName } from 'utils/manufacturers';
-import FilterWidgetList from './List/FilterWidgetList';
+import CheckboxList from 'screens/Catalog/CheckboxList/CheckboxList';
 import styles from './FilterWidget.module.scss';
 
 
@@ -29,7 +29,7 @@ const FilterWidget: FC<FilterWidgetProps> = ({ filterTitle, values, onChangeFilt
             placeholder='Поиск...'
             btnIcon={require('assets/images/Search/search.svg').default}
          />
-         <FilterWidgetList values={filteredManufacturers} onChangeFilterList={onChangeFilterList} />
+         <CheckboxList values={filteredManufacturers} onChangeList={onChangeFilterList} />
       </div>
    );
 }

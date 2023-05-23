@@ -2,9 +2,9 @@ import { FC, useEffect, useMemo, useState } from 'react';
 import styles from './CatalogPage.module.scss';
 import classNames from 'classnames';
 
-import ProductList from 'components/Product/List/ProductList';
-import FiltersContainer from 'components/Filters/Container/FiltersContainer';
-import CategoriesWidget, { CategoriesWidgetVariant } from 'components/Filters/Widgets/Categories/CategoriesWidget';
+import ProductList from './ProductList/ProductList';
+import FiltersContainer from './FiltersContainer/FiltersContainer';
+import Categories, { CategoriesVariant } from './Categories/Categories';
 
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import { useActions } from "hooks/useActions";
@@ -12,8 +12,8 @@ import { useResize } from 'hooks/useResize';
 
 import { filterProducts } from 'utils/filter';
 import { IProduct } from 'types/product';
-import SortWidget from 'components/Filters/Widgets/Sort/SortWidget';
-import Pagination from 'components/Pagination/Pagination';
+import SortWidget from './SortWidget/SortWidget';
+import Pagination from './Pagination/Pagination';
 
 
 
@@ -54,9 +54,9 @@ const CatalogPage: FC = () => {
          </div>
          {
             (!screen.isMedia6) &&
-            <CategoriesWidget
+            <Categories
                className={styles.categories}
-               variant={CategoriesWidgetVariant.horizontalButtonList}
+               variant={CategoriesVariant.horizontalButtonList}
                currentCategory={filter.category}
                onClickCategory={(categoryItem) => setProductCategory(categoryItem)}
             />

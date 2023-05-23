@@ -1,21 +1,21 @@
 import React, { FC, useEffect, useState, useMemo } from 'react';
 import { useTypedSelector } from 'hooks/useTypedSelector';
-import styles from './FilterWidgetList.module.scss';
+import styles from './CheckboxList.module.scss';
 import classNames from 'classnames';
 
-interface FilterWidgetListProps {
+interface CheckboxListProps {
    values: Map<string, number>,
-   onChangeFilterList: (selectedValues: string[]) => void,
+   onChangeList: (selectedValues: string[]) => void,
    className?: string
 }
 
-const FilterWidgetList: FC<FilterWidgetListProps> = ({ values, onChangeFilterList, className }) => {
+const CheckboxList: FC<CheckboxListProps> = ({ values, onChangeList, className }) => {
 
    const [selectedValues, setSelectedValues] = useState<string[]>([]);
    const [isFullList, setIsFullList] = useState<boolean>(false);
    const filterCategory = useTypedSelector(state => state.filter.category)
 
-   useEffect(() => { onChangeFilterList(selectedValues); },
+   useEffect(() => { onChangeList(selectedValues); },
       [selectedValues])
 
    useEffect(() => { setSelectedValues([]) },
@@ -78,4 +78,4 @@ const FilterWidgetList: FC<FilterWidgetListProps> = ({ values, onChangeFilterLis
    );
 }
 
-export default FilterWidgetList;
+export default CheckboxList;

@@ -1,16 +1,16 @@
 import { FC } from 'react';
 import { PriceLimit } from 'types/filter';
-import styles from './PriceWidget.module.scss';
+import styles from './PriceFilter.module.scss';
 
 
-interface PriceWidgetProps {
+interface PriceFilterProps {
    startLimit: PriceLimit,
    onChangeMinLimit: (priceMin: number) => void,
    onChangeMaxLimit: (priceMax: number) => void,
    className?: string
 }
 
-const PriceWidget: FC<PriceWidgetProps> = ({ startLimit, onChangeMinLimit, onChangeMaxLimit, className }) => {
+const PriceFilter: FC<PriceFilterProps> = ({ startLimit, onChangeMinLimit, onChangeMaxLimit, className }) => {
    return (
       <div className={className}>
          <div className={styles.title}>Цена <span>₽</span></div>
@@ -31,4 +31,4 @@ const PriceWidget: FC<PriceWidgetProps> = ({ startLimit, onChangeMinLimit, onCha
    );
 }
 
-export default PriceWidget;
+export default PriceFilter;

@@ -2,12 +2,12 @@
 import { FC } from 'react';
 import styles from './Footer.module.scss';
 import classNames from 'classnames';
-import Navigation, { NavigationVariant } from 'components/Navigation/Navigation';
+import Navigation, { NavigationVariant } from 'shared/Navigation/Navigation';
 import { ReactComponent as Logo } from 'assets/images/Header/logo.svg';
-import Button from 'components/UI/Button/Button';
-import Input from 'components/UI/Input/Input';
-import Contact from 'components/Contact/Contact';
-import BackCall from 'components/BackCall/BackCall';
+import Button from 'shared/UI/Button/Button';
+import Input from 'shared/UI/Input/Input';
+import Contact from 'shared/Contact/Contact';
+import BackCall from 'shared/BackCall/BackCall';
 import { ReactComponent as VisaIcon } from 'assets/images/Footer/Visa.svg';
 import { ReactComponent as MasterCardIcon } from 'assets/images/Footer/MasterCard.svg';
 import { ReactComponent as TelegramIcon } from 'assets/images/Footer/telegram.svg';

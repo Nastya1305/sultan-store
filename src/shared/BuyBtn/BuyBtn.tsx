@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import styles from './BuyBtn.module.scss';
 import classNames from 'classnames';
-import Button from 'components/UI/Button/Button';
+import Button from 'shared/UI/Button/Button';
 import { ReactComponent as BasketImg } from "assets/images/basket.svg";
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import { useActions } from "hooks/useActions";

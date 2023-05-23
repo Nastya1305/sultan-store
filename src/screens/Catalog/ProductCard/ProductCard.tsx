@@ -1,12 +1,9 @@
 import { FC, useMemo } from 'react';
 import { IProduct, SizeType } from "types/product";
 import styles from './ProductCard.module.scss';
-import Button from 'components/UI/Button/Button';
-import { ReactComponent as BasketImg } from "assets/images/basket.svg";
-
 import { Link } from 'react-router-dom';
-import ProductSize from '../Size/ProductSize';
-import BuyBtn from '../BuyBtn/BuyBtn';
+import ProductSize from 'shared/ProductSize/ProductSize';
+import BuyBtn from 'shared/BuyBtn/BuyBtn';
 
 
 interface ProductCardProps {

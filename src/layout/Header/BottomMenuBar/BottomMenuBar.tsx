@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { ReactComponent as Logo } from 'assets/images/Header/logo.svg';
-import Button from 'components/UI/Button/Button';
-import Input from 'components/UI/Input/Input';
-import BackCall from 'components/BackCall/BackCall';
+import Button from 'shared/UI/Button/Button';
+import Input from 'shared/UI/Input/Input';
+import BackCall from 'shared/BackCall/BackCall';
 import Cart from 'layout/Header/Cart/Cart';
 import { useResize } from 'hooks/useResize';
 import { ReactComponent as CatalogIcon } from 'assets/images/Header/catalog-icon.svg';

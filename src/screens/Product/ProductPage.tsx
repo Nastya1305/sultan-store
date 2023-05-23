@@ -1,15 +1,12 @@
 import { FC, useMemo } from 'react';
 import styles from './ProductPage.module.scss';
-import classNames from 'classnames';
 import { useParams } from 'react-router-dom';
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import { getProductByBarcode } from 'utils/filter';
 import { IProduct, SizeType } from 'types/product';
-import ProductSize from 'components/Product/Size/ProductSize';
-import Button from 'components/UI/Button/Button';
-import { ReactComponent as BasketImg } from "assets/images/basket.svg";
-import Accordion from 'components/UI/Accordion/Accordion';
-import BuyBtn from 'components/Product/BuyBtn/BuyBtn';
+import ProductSize from 'shared/ProductSize/ProductSize';
+import Accordion from 'shared/UI/Accordion/Accordion';
+import BuyBtn from 'shared/BuyBtn/BuyBtn';
 
 
 const ProductPage: FC = () => {

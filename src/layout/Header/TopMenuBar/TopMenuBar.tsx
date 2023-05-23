@@ -1,13 +1,13 @@
 import { FC, useState } from 'react';
-import Contact from 'components/Contact/Contact';
-import Navigation, { NavigationVariant } from 'components/Navigation/Navigation';
+import Contact from 'shared/Contact/Contact';
+import Navigation, { NavigationVariant } from 'shared/Navigation/Navigation';
 import { useResize } from 'hooks/useResize';
 import { ReactComponent as Logo } from 'assets/images/Header/logo.svg';
 import Cart from '../Cart/Cart';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import styles from './TopMenuBar.module.scss';
 import classNames from 'classnames';
-import Button from 'components/UI/Button/Button';
+import Button from 'shared/UI/Button/Button';
 
 interface TopMenuBarProps {
    className?: string

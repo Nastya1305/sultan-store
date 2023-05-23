@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Product from 'components/Product/Card/ProductCard';
+import ProductCard from 'screens/Catalog/ProductCard/ProductCard';
 import { IProduct } from 'types/product';
 import styles from './ProductList.module.scss';
 import classNames from 'classnames';
@@ -17,7 +17,7 @@ const ProductList: FC<ProductListProps> = ({ values, className }) => {
          {
             values.length ? values.map(product =>
                <div className={styles.column} key={product.barcode}>
-                  <Product product={product} />
+                  <ProductCard product={product} />
                </div>)
                :
                <div className={styles.message}>Товары не найдены</div>

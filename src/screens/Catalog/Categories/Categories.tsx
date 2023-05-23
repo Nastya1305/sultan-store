@@ -1,17 +1,17 @@
 import { FC } from 'react';
-import styles from './CategoriesWidget.module.scss';
+import styles from './Categories.module.scss';
 import classNames from 'classnames';
 import { ProductCategory } from 'types/product';
 
-export enum CategoriesWidgetVariant {
+export enum CategoriesVariant {
    horizontalButtonList = "horizontalButtonList",
    verticalLinkList = "verticalLinkList"
 }
 
-interface CategoriesWidgetProps {
+interface CategoriesProps {
    currentCategory: ProductCategory,
    onClickCategory: (categoryName: ProductCategory) => void,
-   variant: CategoriesWidgetVariant,
+   variant: CategoriesVariant,
    className?: string
 }
 
@@ -30,12 +30,12 @@ const categories: Array<ProductCategory> = [
    ProductCategory.PaperProducts,
 ];
 
-const CategoriesWidget: FC<CategoriesWidgetProps> = ({ currentCategory, onClickCategory, variant, className }) => {
+const Categories: FC<CategoriesProps> = ({ currentCategory, onClickCategory, variant, className }) => {
 
    return (
       <div className={classNames(styles[variant], className)}>
          {
-            variant == CategoriesWidgetVariant.verticalLinkList &&
+            variant == CategoriesVariant.verticalLinkList &&
             <h2 className={styles.title}>Тип ухода</h2>
          }
          <ul className={styles.list}>
@@ -56,4 +56,4 @@ const CategoriesWidget: FC<CategoriesWidgetProps> = ({ currentCategory, onClickC
    );
 }
 
-export default CategoriesWidget;
+export default Categories;
