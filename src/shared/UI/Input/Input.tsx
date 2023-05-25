@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, ReactElement, SVGProps } from 'react';
 import styles from './Input.module.scss';
 import classNames from 'classnames';
 import Button from 'shared/UI/Button/Button';
@@ -7,7 +7,7 @@ import Button from 'shared/UI/Button/Button';
 interface InputProps {
    className?: string,
    placeholder: string,
-   btnIcon: string,
+   btnIcon: ReactElement<SVGProps<SVGElement>>,
    onInput: (inputValue: string) => void,
 }
 
@@ -28,7 +28,7 @@ const Input: FC<InputProps> = ({ className, placeholder, btnIcon, onInput }) => 
             onChange={(e) => setInputValue(e.target.value)}
          />
          <Button className={styles.button}>
-            <img src={btnIcon} alt="Картинка на кнопке" />
+            {btnIcon}
          </Button>
       </form >
    );

@@ -26,7 +26,7 @@ const Pagination: FC<PaginationProps> = ({ curPage, pageCount, pageCountDisplaye
       if (pageCountDisplayed < 2) {
          throw new Error('Количество отображаемых страниц меньше 2')
       }
-   }, [])
+   }, [pageCountDisplayed])
 
    const allPages: number[] = useMemo(() => {
       const pages: number[] = [];
@@ -39,13 +39,13 @@ const Pagination: FC<PaginationProps> = ({ curPage, pageCount, pageCountDisplaye
 
 
    function changeRange(selectedPage: number): void {
-      if (selectedPage == pageRangeDisplayed.end && selectedPage != pageCount) {
+      if (selectedPage === pageRangeDisplayed.end && selectedPage !== pageCount) {
          setPageRangeDisplayed((prev) => ({
             start: prev.start + Math.round(pageCountDisplayed / 2),
             end: prev.end + Math.round(pageCountDisplayed / 2)
          }))
       }
-      if (selectedPage == pageRangeDisplayed.start && selectedPage != 1) {
+      if (selectedPage === pageRangeDisplayed.start && selectedPage !== 1) {
          setPageRangeDisplayed((prev) => ({
             start: prev.start - Math.round(pageCountDisplayed / 2),
             end: prev.end - Math.round(pageCountDisplayed / 2)
@@ -70,7 +70,7 @@ const Pagination: FC<PaginationProps> = ({ curPage, pageCount, pageCountDisplaye
 
          {allPages.slice(pageRangeDisplayed.start - 1, pageRangeDisplayed.end).map(page =>
             <div key={page}
-               className={classNames(styles.btn, { 'selected': page == curPage })}
+               className={classNames(styles.btn, { 'selected': page === curPage })}
                onClick={() => {
                   onPageChange(page);
                   changeRange(page);

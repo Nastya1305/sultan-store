@@ -8,6 +8,8 @@ import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import styles from './TopMenuBar.module.scss';
 import classNames from 'classnames';
 import Button from 'shared/UI/Button/Button';
+import { ReactComponent as LocationIcon } from 'assets/images/contacts/location.svg';
+import { ReactComponent as MailIcon } from 'assets/images/contacts/mail.svg';
 
 interface TopMenuBarProps {
    className?: string
@@ -25,14 +27,14 @@ const TopMenuBar: FC<TopMenuBarProps> = ({ className }) => {
                   <div className={styles.contacts}>
                      <Contact
                         className={styles.contact}
-                        img={require('assets/images/contacts/location.svg').default}
+                        icon={<LocationIcon />}
                         info='г. Кокчетав, ул. Ж. Ташенова 129Б'
                         secondary='(Рынок Восточный)'
                         color='dark'
                      />
                      <Contact
                         className={styles.contact}
-                        img={require('assets/images/contacts/mail.svg').default}
+                        icon={<MailIcon />}
                         info='opt.sultan@mail.ru '
                         secondary='На связи в любое время'
                         color='dark'

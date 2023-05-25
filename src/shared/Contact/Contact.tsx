@@ -1,22 +1,22 @@
-import { FC } from 'react'
+import { FC, ReactElement, SVGProps } from 'react'
 import styles from './Contact.module.scss';
 import classNames from 'classnames';
 
 interface ContactProps {
-   img?: string,
+   icon?: ReactElement<SVGProps<SVGElement>>,
    info: string,
    secondary: string,
    color: 'light' | 'dark',
    className?: string
 }
 
-const Contact: FC<ContactProps> = ({ img, info, secondary, color, className }) => {
+const Contact: FC<ContactProps> = ({ icon, info, secondary, color, className }) => {
    return (
       <div className={classNames(styles.container, styles[color], className)}>
          {
-            img &&
+            icon &&
             <div className={styles.img}>
-               <img src={img} alt='иконка' />
+               {icon}
             </div>
          }
 

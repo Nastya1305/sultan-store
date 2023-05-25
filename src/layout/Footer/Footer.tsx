@@ -12,6 +12,7 @@ import { ReactComponent as VisaIcon } from 'assets/images/payment-systems/Visa.s
 import { ReactComponent as MasterCardIcon } from 'assets/images/payment-systems/MasterCard.svg';
 import { ReactComponent as TelegramIcon } from 'assets/images/messengers/telegram.svg';
 import { ReactComponent as WhatsAppIcon } from 'assets/images/messengers/whatsapp.svg';
+import { ReactComponent as ArrowIcon } from 'assets/images/arrow-right.svg';
 
 const Footer: FC = () => {
 
@@ -30,7 +31,11 @@ const Footer: FC = () => {
                </div>
                <div className={styles.subscription}>
                   <p className={styles.title}>Подпишись на скидки и акции</p>
-                  <Input placeholder='Введите ваш E-mail' btnIcon={require('assets/images/white-arrow.svg').default} onInput={() => { }} />
+                  <Input
+                     placeholder='Введите ваш E-mail'
+                     btnIcon={<ArrowIcon fill='white' />}
+                     onInput={() => { }}
+                  />
                </div>
             </div>
 

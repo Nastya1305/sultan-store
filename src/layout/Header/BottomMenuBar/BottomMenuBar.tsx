@@ -32,7 +32,7 @@ const BottomMenuBar: FC<BottomMenuBarProps> = ({ className }) => {
                   className={styles.search}
                   onInput={() => { }}
                   placeholder='Поиск...'
-                  btnIcon={require('assets/images/search.svg').default}
+                  btnIcon={<SearchIcon stroke='white' />}
                />
                <BackCall className={styles.backCall} textAlign='right' color='dark' withImg />
                <Button className={classNames(styles.priceListBtn, styles.btn)}>

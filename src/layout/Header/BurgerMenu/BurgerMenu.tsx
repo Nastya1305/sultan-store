@@ -1,9 +1,15 @@
 import Button from 'shared/UI/Button/Button';
-import { FC, useState, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import Contact from 'shared/Contact/Contact';
 import Navigation, { NavigationVariant } from 'shared/Navigation/Navigation';
 import styles from './BurgerMenu.module.scss';
 import classNames from 'classnames';
+import { ReactComponent as LocationIcon } from 'assets/images/contacts/location.svg';
+import { ReactComponent as MailIcon } from 'assets/images/contacts/mail.svg';
+import { ReactComponent as PhoneIcon } from 'assets/images/contacts/phone.svg';
+
+
+
 
 interface BurgerMenuProps {
    className?: string,
@@ -32,20 +38,20 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ className, menuOpen, setMenuOpen }) =
                   <div className='container'>
                      <div className={styles.contacts}>
                         <Contact
-                           img={require('assets/images/contacts/location.svg').default}
+                           icon={<LocationIcon />}
                            info='г. Кокчетав, ул. Ж. Ташенова 129Б'
                            secondary='(Рынок Восточный)'
                            color='dark'
                         />
                         <Contact
-                           img={require('assets/images/contacts/mail.svg').default}
+                           icon={<MailIcon />}
                            info='opt.sultan@mail.ru'
                            secondary='На связи в любое время'
                            color='dark'
                         />
                         <div className={styles.salesTeamContact}>
                            <Contact
-                              img={require('assets/images/contacts/phone.svg').default}
+                              icon={<PhoneIcon />}
                               info='Отдел продаж'
                               secondary='+7 (777) 490-00-91'
                               color='dark'

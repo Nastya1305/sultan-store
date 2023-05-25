@@ -4,7 +4,7 @@ import { ManufacturersType } from 'types/filter';
 import { searchManufacturersByName } from 'utils/manufacturers';
 import CheckboxList from 'screens/Catalog/CheckboxList/CheckboxList';
 import styles from './FilterWidget.module.scss';
-
+import { ReactComponent as SearchIcon } from "assets/images/search.svg";
 
 interface FilterWidgetProps {
    filterTitle: string,
@@ -27,7 +27,7 @@ const FilterWidget: FC<FilterWidgetProps> = ({ filterTitle, values, onChangeFilt
             className={styles.search}
             onInput={(value) => setSearchValue(value)}
             placeholder='Поиск...'
-            btnIcon={require('assets/images/search.svg').default}
+            btnIcon={<SearchIcon stroke='white' />}
          />
          <CheckboxList values={filteredManufacturers} onChangeList={onChangeFilterList} />
       </div>
