@@ -32,20 +32,20 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ className, menuOpen, setMenuOpen }) =
                   <div className='container'>
                      <div className={styles.contacts}>
                         <Contact
-                           img={require('assets/images/Header/contacts/location.svg').default}
+                           img={require('assets/images/contacts/location.svg').default}
                            info='г. Кокчетав, ул. Ж. Ташенова 129Б'
                            secondary='(Рынок Восточный)'
                            color='dark'
                         />
                         <Contact
-                           img={require('assets/images/Header/contacts/mail.svg').default}
+                           img={require('assets/images/contacts/mail.svg').default}
                            info='opt.sultan@mail.ru'
                            secondary='На связи в любое время'
                            color='dark'
                         />
                         <div className={styles.salesTeamContact}>
                            <Contact
-                              img={require('assets/images/Header/contacts/phone.svg').default}
+                              img={require('assets/images/contacts/phone.svg').default}
                               info='Отдел продаж'
                               secondary='+7 (777) 490-00-91'
                               color='dark'
@@ -64,7 +64,7 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ className, menuOpen, setMenuOpen }) =
                         />
                         <Button className={styles.priceListBtn}>
                            <span>Прайс-лист</span>
-                           <img src={require('assets/images/Header/download-icon.svg').default} alt='иконка' />
+                           <img src={require('assets/images/download-icon.svg').default} alt='иконка' />
                         </Button>
                      </div>
 

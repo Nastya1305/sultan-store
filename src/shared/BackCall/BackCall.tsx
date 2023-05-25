@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import salesTeamImg from 'assets/images/Header/sales-team.png';
+import salesTeamImg from 'assets/images/sales-team.png';
 import styles from './BackCall.module.scss';
 import classNames from 'classnames';
 

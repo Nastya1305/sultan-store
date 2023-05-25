@@ -1,5 +1,5 @@
 import { FC, useEffect, useMemo, useState } from 'react';
-import { ReactComponent as ArrowImg } from "assets/images/Pagination/arrow-right.svg";
+import { ReactComponent as ArrowImg } from "assets/images/arrow-right.svg";
 import styles from './Pagination.module.scss';
 import classNames from 'classnames';
 

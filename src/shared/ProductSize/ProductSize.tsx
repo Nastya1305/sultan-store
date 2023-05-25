@@ -3,8 +3,8 @@ import { SizeType } from "types/product";
 import styles from './ProductSize.module.scss';
 import classNames from 'classnames';
 
-const boxImg: string = require("assets/images/Product/box.svg").default;
-const bottleImg: string = require("assets/images/Product/bottle.svg").default;
+const boxImg: string = require("assets/images/product-size/box.svg").default;
+const bottleImg: string = require("assets/images/product-size/bottle.svg").default;
 
 interface ProductSizeProps {
    sizeType: SizeType,

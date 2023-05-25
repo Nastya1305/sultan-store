@@ -3,15 +3,15 @@ import { FC } from 'react';
 import styles from './Footer.module.scss';
 import classNames from 'classnames';
 import Navigation, { NavigationVariant } from 'shared/Navigation/Navigation';
-import { ReactComponent as Logo } from 'assets/images/Header/logo.svg';
+import { ReactComponent as Logo } from 'assets/images/logo.svg';
 import Button from 'shared/UI/Button/Button';
 import Input from 'shared/UI/Input/Input';
 import Contact from 'shared/Contact/Contact';
 import BackCall from 'shared/BackCall/BackCall';
-import { ReactComponent as VisaIcon } from 'assets/images/Footer/Visa.svg';
-import { ReactComponent as MasterCardIcon } from 'assets/images/Footer/MasterCard.svg';
-import { ReactComponent as TelegramIcon } from 'assets/images/Footer/telegram.svg';
-import { ReactComponent as WhatsAppIcon } from 'assets/images/Footer/whatsapp.svg';
+import { ReactComponent as VisaIcon } from 'assets/images/payment-systems/Visa.svg';
+import { ReactComponent as MasterCardIcon } from 'assets/images/payment-systems/MasterCard.svg';
+import { ReactComponent as TelegramIcon } from 'assets/images/messengers/telegram.svg';
+import { ReactComponent as WhatsAppIcon } from 'assets/images/messengers/whatsapp.svg';
 
 const Footer: FC = () => {
 
@@ -23,7 +23,7 @@ const Footer: FC = () => {
                   <Logo className={styles.logo} />
                   <Button className={styles.priceListBtn}>
                      <span>Прайс-лист</span>
-                     <img src={require('assets/images/Header/download-icon.svg').default} alt='иконка' />
+                     <img src={require('assets/images/download-icon.svg').default} alt='иконка' />
                   </Button>
                   <p className={styles.text}>Компания «Султан» — снабжаем розничные магазины товарами
                      "под ключ" в Кокчетаве и Акмолинской области</p>

@@ -33,6 +33,14 @@
          transform: rotate(-180deg);
       }
    }
+
+   .btnImg {
+      transform: rotate(90deg);
+      height: 12px;
+      width: 10px;
+      fill: #717f95;
+      stroke: none;
+   }
 }
 
 .filters {

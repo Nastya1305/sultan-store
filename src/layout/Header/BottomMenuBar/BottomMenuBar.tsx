@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import { ReactComponent as Logo } from 'assets/images/Header/logo.svg';
+import { ReactComponent as Logo } from 'assets/images/logo.svg';
 import Button from 'shared/UI/Button/Button';
 import Input from 'shared/UI/Input/Input';
 import BackCall from 'shared/BackCall/BackCall';
 import Cart from 'layout/Header/Cart/Cart';
 import { useResize } from 'hooks/useResize';
-import { ReactComponent as CatalogIcon } from 'assets/images/Header/catalog-icon.svg';
-import { ReactComponent as SearchIcon } from "assets/images/Search/search.svg";
+import { ReactComponent as CatalogIcon } from 'assets/images/catalog-icon.svg';
+import { ReactComponent as SearchIcon } from "assets/images/search.svg";
 import styles from './BottomMenuBar.module.scss';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
@@ -32,12 +32,12 @@ const BottomMenuBar: FC<BottomMenuBarProps> = ({ className }) => {
                   className={styles.search}
                   onInput={() => { }}
                   placeholder='Поиск...'
-                  btnIcon={require('assets/images/Search/search.svg').default}
+                  btnIcon={require('assets/images/search.svg').default}
                />
                <BackCall className={styles.backCall} textAlign='right' color='dark' withImg />
                <Button className={classNames(styles.priceListBtn, styles.btn)}>
                   <span>Прайс-лист</span>
-                  <img src={require('assets/images/Header/download-icon.svg').default} alt='иконка' />
+                  <img src={require('assets/images/download-icon.svg').default} alt='иконка' />
                </Button>
                <Cart />
             </>

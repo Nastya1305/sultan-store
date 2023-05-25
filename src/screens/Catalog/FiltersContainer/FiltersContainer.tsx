@@ -14,7 +14,7 @@ import { getManufacturersFromProducts } from 'utils/manufacturers';
 import { filterProducts } from 'utils/filter';
 import { ManufacturersType, SortTypes } from 'types/filter';
 
-const arrowImg: string = require("assets/images/FilterContainer/arrow-down.svg").default;
+import { ReactComponent as ArrowImg } from "assets/images/arrow-right.svg";
 
 
 interface FiltersContainerProps {
@@ -45,7 +45,7 @@ const FiltersContainer: FC<FiltersContainerProps> = ({ className }) => {
                      className={classNames(styles.btn, { "up": isFilterListOpen, "down": !isFilterListOpen })}
                      onClick={() => setIsFilterListOpen((prevState) => !prevState)}
                   >
-                     <img src={arrowImg} alt="стрелка" />
+                     <ArrowImg className={styles.btnImg} />
                   </button>
                }
             </div>

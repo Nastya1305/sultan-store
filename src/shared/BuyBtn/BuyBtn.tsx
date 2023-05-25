@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import styles from './BuyBtn.module.scss';
 import classNames from 'classnames';
 import Button from 'shared/UI/Button/Button';
-import { ReactComponent as BasketImg } from "assets/images/basket.svg";
+import { ReactComponent as CartImg } from "assets/images/cart.svg";
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import { useActions } from "hooks/useActions";
 import { IProduct } from 'types/product';
@@ -27,7 +27,7 @@ const BuyBtn: FC<BuyBtnProps> = ({ className, hasSmallForm, product }) => {
             (!products.has(product) || (hasSmallForm && screen.width < 430)) &&
             <Button className={classNames(styles.btn, className, { 'small': hasSmallForm })} onClick={() => { addProduct(product); }}>
                <span className={styles.btnText}>В корзину</span>
-               <BasketImg className={styles.btnImg} />
+               <CartImg className={styles.btnImg} />
                {
                   (products.has(product) && hasSmallForm && screen.width < 430) &&
                   <div className={styles.quantity}>{products.get(product)}</div>

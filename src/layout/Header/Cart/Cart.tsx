@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ReactComponent as BasketImg } from "assets/images/basket.svg";
+import { ReactComponent as CartImg } from "assets/images/cart.svg";
 import styles from './Cart.module.scss';
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import { getNumberOfProducts, getTotalCost } from 'utils/cart';
@@ -9,7 +9,7 @@ const Cart: FC = () => {
    return (
       <div className={styles.container}>
          <div className={styles.img}>
-            <BasketImg />
+            <CartImg />
             <div className={styles.quantity}>{getNumberOfProducts(products)}</div>
          </div>
 

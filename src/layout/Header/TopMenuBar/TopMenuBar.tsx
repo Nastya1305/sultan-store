@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import Contact from 'shared/Contact/Contact';
 import Navigation, { NavigationVariant } from 'shared/Navigation/Navigation';
 import { useResize } from 'hooks/useResize';
-import { ReactComponent as Logo } from 'assets/images/Header/logo.svg';
+import { ReactComponent as Logo } from 'assets/images/logo.svg';
 import Cart from '../Cart/Cart';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import styles from './TopMenuBar.module.scss';
@@ -25,14 +25,14 @@ const TopMenuBar: FC<TopMenuBarProps> = ({ className }) => {
                   <div className={styles.contacts}>
                      <Contact
                         className={styles.contact}
-                        img={require('assets/images/Header/contacts/location.svg').default}
+                        img={require('assets/images/contacts/location.svg').default}
                         info='г. Кокчетав, ул. Ж. Ташенова 129Б'
                         secondary='(Рынок Восточный)'
                         color='dark'
                      />
                      <Contact
                         className={styles.contact}
-                        img={require('assets/images/Header/contacts/mail.svg').default}
+                        img={require('assets/images/contacts/mail.svg').default}
                         info='opt.sultan@mail.ru '
                         secondary='На связи в любое время'
                         color='dark'

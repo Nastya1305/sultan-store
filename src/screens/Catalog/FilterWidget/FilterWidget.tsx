@@ -27,7 +27,7 @@ const FilterWidget: FC<FilterWidgetProps> = ({ filterTitle, values, onChangeFilt
             className={styles.search}
             onInput={(value) => setSearchValue(value)}
             placeholder='Поиск...'
-            btnIcon={require('assets/images/Search/search.svg').default}
+            btnIcon={require('assets/images/search.svg').default}
          />
          <CheckboxList values={filteredManufacturers} onChangeList={onChangeFilterList} />
       </div>
