@@ -9,20 +9,18 @@
    font-size: 12px;
    color: #3f4e65;
 
-   &:global(.open-state) {
-      .open {
-         display: block;
-      }
-      .close {
-         display: none;
-      }
+   .openBtn {
+      display: block;
+   }
+   .closeBtn {
+      display: none;
    }
 
-   &:global(.close-state) {
-      .open {
+   &:global(.fullList) {
+      .openBtn {
          display: none;
       }
-      .close {
+      .closeBtn {
          display: block;
       }
    }

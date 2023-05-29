@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useState, useMemo } from 'react';
-import { useTypedSelector } from 'hooks/useTypedSelector';
 import styles from './CheckboxList.module.scss';
 import classNames from 'classnames';
 
@@ -10,18 +9,16 @@ interface CheckboxListProps {
 }
 
 const CheckboxList: FC<CheckboxListProps> = ({ values, onChangeList, className }) => {
-
    const [selectedValues, setSelectedValues] = useState<string[]>([]);
    const [isFullList, setIsFullList] = useState<boolean>(false);
-   const filterCategory = useTypedSelector(state => state.filter.category)
 
    useEffect(() => { onChangeList(selectedValues); },
       [selectedValues])
 
    useEffect(() => { setSelectedValues([]) },
-      [filterCategory])
+      [values])
 
-   const valuesList = useMemo(() =>
+   const sortedList = useMemo(() =>
       Array.from(values).sort(([value1], [value2]) => {
          return Number(selectedValues.includes(value2)) - Number(selectedValues.includes(value1));
       }), [values, selectedValues])
@@ -38,7 +35,7 @@ const CheckboxList: FC<CheckboxListProps> = ({ values, onChangeList, className }
 
    function getCheckBoxList(from: number, to: number): JSX.Element[] {
       return (
-         valuesList.slice(from, to).map(([valueName, num]) =>
+         sortedList.slice(from, to).map(([valueName, num]) =>
             <div className={styles.value} key={valueName}>
 
                <input type="checkbox"
@@ -58,17 +55,17 @@ const CheckboxList: FC<CheckboxListProps> = ({ values, onChangeList, className }
    return (
       <div className={className}>
          {
-            values.size ?
+            (values.size > 0) ?
                <>
                   {getCheckBoxList(0, 4)}
                   {isFullList && getCheckBoxList(4, values.size)}
                   {
                      (values.size > 4) &&
                      <button
-                        className={classNames(styles.openCloseBtn, { "close-state": isFullList, "open-state": !isFullList })}
+                        className={classNames(styles.openCloseBtn, { "fullList": isFullList })}
                         onClick={() => setIsFullList((prevState) => !prevState)}>
-                        <span className={styles.open}>Показать все ▼</span>
-                        <span className={styles.close}>Скрыть ▲</span>
+                        <span className={styles.openBtn}>Показать все ▼</span>
+                        <span className={styles.closeBtn}>Скрыть ▲</span>
                      </button>
                   }
                </>
