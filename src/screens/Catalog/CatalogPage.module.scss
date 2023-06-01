@@ -29,21 +29,9 @@
 
 .title {
    grid-area: 1 / 1 / 2 / 4;
-   margin-bottom: 0.6em;
-
-   font-weight: 500;
-   font-size: 40px;
-   line-height: 120%;
-   text-transform: uppercase;
-   color: #111111;
 
    @media (max-width: $media2 + px) {
       grid-area: 1 / 1 / 2 / 3;
-      font-size: 30px;
-   }
-
-   @media (max-width: 768px) {
-      font-size: 20px;
    }
 
    @media (max-width: $media6 + px) {

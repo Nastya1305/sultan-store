@@ -39,3 +39,35 @@ body.lock {
 .main {
    flex: 1 1 auto;
 }
+
+.message {
+   font-weight: 400;
+   font-size: 30px;
+   line-height: 120%;
+   color: rgb(214, 214, 214);
+
+   margin-top: 30px;
+
+   @media (max-width: $media4 + px) {
+      font-size: 20px;
+      margin-top: 20px;
+   }
+}
+
+.title {
+   font-weight: 500;
+   font-size: 40px;
+   line-height: 120%;
+   text-transform: uppercase;
+   color: #111111;
+
+   margin-bottom: 0.6em;
+
+   @media (max-width: $media2 + px) {
+      font-size: 30px;
+   }
+
+   @media (max-width: 768px) {
+      font-size: 20px;
+   }
+}

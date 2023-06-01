@@ -9,13 +9,14 @@ import { IProduct } from 'types/product';
 import { useResize } from 'hooks/useResize';
 
 interface BuyBtnProps {
-   className?: string,
+   btnClassName?: string,
+   widgetClassName?: string,
    hasSmallForm: boolean,
    product: IProduct
 }
 
 
-const BuyBtn: FC<BuyBtnProps> = ({ className, hasSmallForm, product }) => {
+const BuyBtn: FC<BuyBtnProps> = ({ btnClassName, widgetClassName, hasSmallForm, product }) => {
    const { products } = useTypedSelector(state => state.cart)
    const { addProduct, removeProduct } = useActions();
 
@@ -25,7 +26,7 @@ const BuyBtn: FC<BuyBtnProps> = ({ className, hasSmallForm, product }) => {
       <>
          {
             (!products.has(product) || (hasSmallForm && screen.width < 430)) &&
-            <Button className={classNames(styles.btn, className, { 'small': hasSmallForm })} onClick={() => { addProduct(product); }}>
+            <Button className={classNames(styles.btn, { 'small': hasSmallForm }, btnClassName)} onClick={() => { addProduct(product); }}>
                <span className={styles.btnText}>В корзину</span>
                <CartImg className={styles.btnImg} />
                {
@@ -37,7 +38,7 @@ const BuyBtn: FC<BuyBtnProps> = ({ className, hasSmallForm, product }) => {
 
          {
             (products.has(product) && (!hasSmallForm || (hasSmallForm && screen.width > 430))) &&
-            <div className={styles.widget}>
+            <div className={classNames(styles.widget, widgetClassName)}>
                <button className={styles.miniBtn} onClick={() => { removeProduct(product); }}>-</button>
                {products.get(product)}
                <button className={styles.miniBtn} onClick={() => { addProduct(product); }}>+</button>

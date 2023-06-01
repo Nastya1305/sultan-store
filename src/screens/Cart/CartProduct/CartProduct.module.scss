@@ -1,0 +1,162 @@
+@import "styles/vars";
+
+.container {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 231px;
+
+   @media (max-width: $media3 + px) {
+      flex-direction: column;
+      height: auto;
+   }
+}
+
+.productImg {
+   height: 191px;
+   width: 281px;
+   img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+   }
+
+   @media (max-width: $media2 + px) {
+      height: auto;
+      width: 160px;
+      margin-right: 20px;
+   }
+
+   @media (max-width: $media3 + px) {
+      margin-bottom: 10px;
+   }
+
+   @media (max-width: $media6 + px) {
+      width: 120px;
+      margin-right: 10px;
+   }
+
+   @media (max-width: $media7 + px) {
+      width: 100px;
+      margin-right: 0;
+   }
+}
+
+.info {
+   max-width: 480px;
+   overflow: hidden;
+   margin-right: 20px;
+
+   @media (max-width: $media2 + px) {
+      width: 300px;
+   }
+
+   @media (max-width: $media3 + px) {
+      margin-right: 0;
+   }
+
+   @media (max-width: $media6 + px) {
+      width: 250px;
+   }
+
+   @media (max-width: $media7 + px) {
+      width: 200px;
+   }
+
+   .size {
+      margin-bottom: 10px;
+   }
+
+   .title {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 1.25;
+      color: #111111;
+
+      display: block;
+      height: 2.5em;
+      overflow: hidden;
+
+      &:hover {
+         text-decoration: underline;
+      }
+
+      @media (max-width: $media2 + px) {
+         font-size: 18px;
+      }
+
+      @media (max-width: $media6 + px) {
+         font-size: 14px;
+      }
+   }
+}
+
+.column {
+   display: flex;
+   align-items: center;
+}
+
+.buy {
+   justify-content: space-between;
+   align-items: stretch;
+   > * {
+      border-left: 1px dashed rgba(63, 78, 101, 0.1);
+      padding-left: 43px;
+
+      display: flex;
+      align-items: center;
+   }
+
+   > :not(:last-child) {
+      padding-right: 43px;
+   }
+
+   @media (max-width: $media1 + px) {
+      > * {
+         padding-left: 30px;
+      }
+
+      > :not(:last-child) {
+         padding-right: 30px;
+      }
+   }
+
+   @media (max-width: $media6 + px) {
+      > * {
+         padding-left: 8px;
+         border: 0;
+      }
+
+      > :not(:last-child) {
+         padding-right: 10px;
+      }
+   }
+
+   .price {
+      width: 4.61em;
+      text-align: center;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 130%;
+      color: #111111;
+
+      @media (max-width: $media1 + px) {
+         font-size: 24px;
+      }
+
+      @media (max-width: $media2 + px) {
+         font-size: 18px;
+      }
+   }
+
+   .deleteBtn {
+      width: 49px;
+      height: 49px;
+   }
+}
+
+.addBtns {
+   @media (max-width: $media2 + px) {
+      width: 100px;
+   }
+}

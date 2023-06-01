@@ -1,0 +1,92 @@
+@import "styles/vars";
+
+.container {
+   padding: 30px;
+   margin: 40px;
+   width: 735px;
+   height: 424px;
+
+   background: #ffffff;
+   border-radius: 8px;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   position: relative;
+
+   @media (max-width: $media6 + px) {
+      height: 300px;
+   }
+}
+
+.icon {
+   width: 59px;
+   height: 59px;
+
+   background: #ffc85e;
+   border-radius: 79px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   margin-bottom: 24px;
+
+   @media (max-width: $media4 + px) {
+      width: 40px;
+      height: 40px;
+   }
+}
+
+.title {
+   text-align: center;
+}
+
+.closeBtn {
+   cursor: pointer;
+   margin: 0 0 0 auto;
+   width: 24px;
+   height: 24px;
+
+   position: absolute;
+   top: 30px;
+   right: 30px;
+
+   &::before,
+   &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background-color: #ffc85e;
+   }
+
+   &::before {
+      transform: rotate(45deg);
+      top: 49%;
+   }
+
+   &::after {
+      transform: rotate(-45deg);
+      top: 49%;
+   }
+}
+
+.modalContainer {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 2;
+
+   background: rgba(17, 17, 17, 0.5);
+   height: 100vh;
+   width: 100vw;
+   max-width: 100%;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

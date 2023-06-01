@@ -37,8 +37,8 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
             </div>
          </div>
          <div className={styles.buy}>
-            <div className={styles.price}>{product.price} ₽</div>
-            <BuyBtn product={product} className={styles.btn} hasSmallForm />
+            <div className={styles.price}>{product.price.toLocaleString('ru-RU')} ₽</div>
+            <BuyBtn product={product} btnClassName={styles.btn} hasSmallForm />
          </div>
       </div >
    )

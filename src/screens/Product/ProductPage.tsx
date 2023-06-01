@@ -37,8 +37,8 @@ const ProductPage: FC = () => {
                      <ProductSize className={styles.size} sizeType={product.sizeType} sizeValue={product.size} />
 
                      <div className={styles.buy}>
-                        <div className={styles.price}>{product.price} ₽</div>
-                        <BuyBtn className={styles.btn} product={product} hasSmallForm={false} />
+                        <div className={styles.price}>{product.price.toLocaleString('ru-RU')} ₽</div>
+                        <BuyBtn btnClassName={styles.btn} product={product} hasSmallForm={false} />
                      </div>
 
                      <div className={styles.properties}>

@@ -11,6 +11,10 @@ export const cartReducer = (state = initialState, action: CartAction): CartState
          return { ...state, products: addProduct(action.payload, state.products) }
       case CartActionTypes.REMOVE_PRODUCT:
          return { ...state, products: removeProduct(action.payload, state.products) }
+      case CartActionTypes.REMOVE_PRODUCTS:
+         return { ...state, products: removeProducts(action.payload, state.products) }
+      case CartActionTypes.EMPTY_CART:
+         return initialState;
       default:
          return state
    }
@@ -35,4 +39,10 @@ function removeProduct(product: IProduct, products: Map<IProduct, number>): Map<
       return new Map(products).set(product, value - 1);
    } else
       return new Map(products);
+}
+
+function removeProducts(product: IProduct, products: Map<IProduct, number>): Map<IProduct, number> {
+   let newMap = new Map(products);
+   newMap.delete(product);
+   return newMap;
 }

@@ -6,7 +6,9 @@ export interface CartState {
 
 export enum CartActionTypes {
    ADD_PRODUCT = 'ADD_PRODUCT',
-   REMOVE_PRODUCT = 'REMOVE_PRODUCT'
+   REMOVE_PRODUCT = 'REMOVE_PRODUCT',
+   REMOVE_PRODUCTS = 'REMOVE_PRODUCTS',
+   EMPTY_CART = 'EMPTY_CART'
 }
 
 interface AddProductAction {
@@ -19,4 +21,13 @@ interface RemoveProductAction {
    payload: IProduct
 }
 
-export type CartAction = AddProductAction | RemoveProductAction
+interface RemoveProductsAction {
+   type: CartActionTypes.REMOVE_PRODUCTS,
+   payload: IProduct
+}
+
+interface EmptyCartAction {
+   type: CartActionTypes.EMPTY_CART,
+}
+
+export type CartAction = AddProductAction | RemoveProductAction | RemoveProductsAction | EmptyCartAction

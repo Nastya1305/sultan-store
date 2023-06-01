@@ -39,15 +39,13 @@ const CatalogPage: FC = () => {
    }, [filteredProducts, curPage]);
 
 
-   useEffect(() => {
-      getProducts()
-   }, [])
+
 
 
 
    return (
       <div className={styles.container}>
-         <h1 className={styles.title}>Косметика и гигиена</h1>
+         <h1 className={classNames('title', styles.title)}>Косметика и гигиена</h1>
          <div className={styles.sortWidget}>
             <span className={styles.sortTitle}>Сортировка:</span>
             <SortWidget />

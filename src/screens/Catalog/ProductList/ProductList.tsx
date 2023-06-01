@@ -20,7 +20,7 @@ const ProductList: FC<ProductListProps> = ({ values, className }) => {
                   <ProductCard product={product} />
                </div>)
                :
-               <div className={styles.message}>Товары не найдены</div>
+               <div className='message'>Товары не найдены</div>
 
          }
       </div>
