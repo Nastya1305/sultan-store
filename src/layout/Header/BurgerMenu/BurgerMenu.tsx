@@ -33,7 +33,7 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ className, menuOpen }) => {
       <Modal>
          {
             menuOpen &&
-            <div className={classNames(styles.container, className)}>
+            <div className={classNames(styles.container, className)} style={{ top: window.pageYOffset + 'px' }}>
                <div className={styles.menu}>
                   <div className='container'>
                      <div className={styles.contacts}>
