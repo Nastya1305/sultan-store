@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sultan-store/static/css/main.25378b95.css",
-    "main.js": "/sultan-store/static/js/main.1fd728d0.js",
+    "main.css": "/sultan-store/static/css/main.11ba8ab3.css",
+    "main.js": "/sultan-store/static/js/main.b63c24a2.js",
     "static/media/2.jpg": "/sultan-store/static/media/2.0a94842412d859a56f38.jpg",
     "static/media/3135979.jpg": "/sultan-store/static/media/3135979.f9eb6c655c1ff51c16d2.jpg",
     "static/media/3122051.jpg": "/sultan-store/static/media/3122051.346555974647742b72d6.jpg",
@@ -40,11 +40,11 @@
     "static/media/done.svg": "/sultan-store/static/media/done.5c6f9735b0d35273ae3ea11024166fea.svg",
     "static/media/download-icon.svg": "/sultan-store/static/media/download-icon.22e356ed7d36f448dcbf0ac7a1a1a990.svg",
     "static/media/arrow-right.svg": "/sultan-store/static/media/arrow-right.d9ed1b1c9e0862e3488bd8ec502ce22e.svg",
-    "main.25378b95.css.map": "/sultan-store/static/css/main.25378b95.css.map",
-    "main.1fd728d0.js.map": "/sultan-store/static/js/main.1fd728d0.js.map"
+    "main.11ba8ab3.css.map": "/sultan-store/static/css/main.11ba8ab3.css.map",
+    "main.b63c24a2.js.map": "/sultan-store/static/js/main.b63c24a2.js.map"
   },
   "entrypoints": [
-    "static/css/main.25378b95.css",
-    "static/js/main.1fd728d0.js"
+    "static/css/main.11ba8ab3.css",
+    "static/js/main.b63c24a2.js"
   ]
 }
