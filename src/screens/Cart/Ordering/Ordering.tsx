@@ -19,7 +19,7 @@ const Ordering: FC<OrderingProps> = ({ onClose }) => {
 
    return (
       <Modal>
-         <div className={styles.modalContainer}>
+         <div className={styles.modalContainer} style={{ top: window.pageYOffset + 'px' }}>
             <div className={styles.container}>
                <div className={styles.closeBtn} onClick={() => onClose()} />
 
