@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import { ReactComponent as LocationIcon } from 'assets/images/contacts/location.svg';
 import { ReactComponent as MailIcon } from 'assets/images/contacts/mail.svg';
 import { ReactComponent as PhoneIcon } from 'assets/images/contacts/phone.svg';
+import Modal from 'shared/UI/Modal/Modal';
 
 
 
@@ -14,10 +15,9 @@ import { ReactComponent as PhoneIcon } from 'assets/images/contacts/phone.svg';
 interface BurgerMenuProps {
    className?: string,
    menuOpen: boolean,
-   setMenuOpen(open: boolean): void
 }
 
-const BurgerMenu: FC<BurgerMenuProps> = ({ className, menuOpen, setMenuOpen }) => {
+const BurgerMenu: FC<BurgerMenuProps> = ({ className, menuOpen }) => {
 
    useEffect(() => {
       if (menuOpen)
@@ -30,7 +30,7 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ className, menuOpen, setMenuOpen }) =
    }, [menuOpen]);
 
    return (
-      <>
+      <Modal>
          {
             menuOpen &&
             <div className={classNames(styles.container, className)}>
@@ -78,7 +78,7 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ className, menuOpen, setMenuOpen }) =
                </div>
             </div>
          }
-      </>
+      </Modal>
    );
 }
 

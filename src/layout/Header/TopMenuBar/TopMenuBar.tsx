@@ -58,7 +58,7 @@ const TopMenuBar: FC<TopMenuBarProps> = ({ className }) => {
                </>)
             }
          </div>
-         {screen.isMedia2 && <BurgerMenu menuOpen={burgerMenuActive} setMenuOpen={setBurgerMenuActive} />}
+         {screen.isMedia2 && <BurgerMenu menuOpen={burgerMenuActive} />}
       </>
 
    )

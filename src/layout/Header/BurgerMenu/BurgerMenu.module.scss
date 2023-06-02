@@ -2,21 +2,22 @@
 
 .container {
    position: absolute;
-   top: $header-tablet-h;
+   top: 0;
    left: 0;
 
+   padding-top: $header-tablet-h;
+   overflow: auto;
    width: 100vw;
    height: 100vh;
    background: rgba(17, 17, 17, 0.5);
 
    @media (max-width: $media4 + px) {
-      top: $header-mobile-h;
+      padding-top: $header-mobile-h;
    }
 }
 
 .menu {
-   overflow-y: auto;
-   height: 552px;
+   width: 100%;
    padding: 20px 0 30px;
    background-color: white;
 }
