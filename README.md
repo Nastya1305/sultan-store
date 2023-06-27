@@ -7,6 +7,14 @@ Cosmetics and household chemicals store website
 
 * Adaptive layout
 
+### Functionality:
+* filtering products by category, price and manufacturer
+* sorting products by name and price
+* pagination
+* viewing product information on the product page
+* adding and removing items in the shopping cart
+* order confirmation on the shopping cart page
+
 ### For start:
 1) npm install
 2) npm start
